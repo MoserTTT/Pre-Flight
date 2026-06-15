@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cswlhw53y346d"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ii150"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxid7"]
+albedo_color = Color(1, 0.32664913, 0.9948308, 1)
+
+[node name="RigidBody3D" type="RigidBody3D" unique_id=1974450837]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=219824820]
+shape = SubResource("SphereShape3D_ii150")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=198449961]
+radial_segments = 16
+rings = 8
+material = SubResource("StandardMaterial3D_fxid7")
