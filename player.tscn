@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6otjgb3haspm" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://cswlhw53y346d" path="res://balling.tscn" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://bvp6vsnu3ipwh" path="res://dark_knight_animated.tscn" id="3_i3pqv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 radius = 0.2944336
@@ -22,9 +23,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1952972820]
 
-[node name="Model" type="CSGBox3D" parent="." unique_id=1651328992]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17154542, 0)
-size = Vector3(0.4, 0.7430908, 0.4)
-
 [node name="Marker3D" type="Marker3D" parent="." unique_id=76265513]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5286908)
+
+[node name="Model" parent="." unique_id=1244530168 instance=ExtResource("3_i3pqv")]

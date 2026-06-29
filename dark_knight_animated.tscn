@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bvp6vsnu3ipwh"]
+
+[ext_resource type="PackedScene" uid="uid://rklomiutsp2m" path="res://DarkKnightAnimated.blend" id="1_0jpbi"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0jpbi"]
+animation = &"Crack Running Forward_FBX Retarget"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hw5pr"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_q0v0f"]
+"states/Crack Running Forward_FBX Retarget/node" = SubResource("AnimationNodeAnimation_0jpbi")
+"states/Crack Running Forward_FBX Retarget/position" = Vector2(454, 100)
+states/Start/position = Vector2(192, 93)
+transitions = ["Start", "Crack Running Forward_FBX Retarget", SubResource("AnimationNodeStateMachineTransition_hw5pr")]
+
+[node name="DarkKnightAnimated" unique_id=1880936754 instance=ExtResource("1_0jpbi")]
+transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0, 0, 0)
+
+[node name="Skeleton3D" parent="metarig_001" parent_id_path=PackedInt32Array(1084980714) index="0" unique_id=130086975]
+bones/0/position = Vector3(0.056055468, 1.0505487, 0.05262716)
+bones/0/rotation = Quaternion(0.12757356, 0.014241906, 0.000101973535, 0.9917269)
+bones/3/rotation = Quaternion(0.005343833, 2.9394856e-10, 3.0716552e-10, 0.9999858)
+bones/6/rotation = Quaternion(0.056379788, -0.023210872, -0.0068264585, 0.9981162)
+bones/7/position = Vector3(0.27752557, 0.17254698, 0.01557666)
+bones/7/rotation = Quaternion(-0.5728611, -0.3773706, -0.43219373, 0.58534634)
+bones/8/rotation = Quaternion(-0.47553557, 0.65452003, -0.47969463, 0.3396507)
+bones/9/rotation = Quaternion(0.73982674, 0.17840408, 0.19578631, 0.6184628)
+bones/10/rotation = Quaternion(-0.18962379, 0.0024414847, -0.05884599, 0.9800889)
+bones/11/position = Vector3(-0.2775256, 0.17254692, 0.0155766485)
+bones/11/rotation = Quaternion(-0.52288276, 0.4396175, 0.44333357, 0.5803323)
+bones/12/rotation = Quaternion(-0.3079805, -0.66715074, 0.5677232, 0.37114456)
+bones/13/rotation = Quaternion(0.7058335, -0.22818829, -0.25544894, 0.6200605)
+bones/14/rotation = Quaternion(-0.12527011, -0.012834726, 0.06646071, 0.98981094)
+bones/17/position = Vector3(0.14219032, 0.082656614, 0.03349234)
+bones/17/rotation = Quaternion(0.9504156, 0.02698355, 0.022802757, 0.3089696)
+bones/18/rotation = Quaternion(0.28179902, 0.01315948, 0.047474105, 0.9582079)
+bones/19/rotation = Quaternion(-0.3965222, -0.59734297, 0.4573701, 0.5260838)
+bones/20/position = Vector3(-0.14219034, 0.082656726, 0.0334923)
+bones/20/rotation = Quaternion(0.988833, -0.005586948, 0.023008585, 0.1471346)
+bones/21/rotation = Quaternion(0.38553584, -0.018037654, -0.045648504, 0.92138654)
+bones/22/rotation = Quaternion(-0.40796855, 0.59875745, -0.41413596, 0.55094695)
+
+[node name="FullKnight" parent="metarig_001/Skeleton3D" index="0" unique_id=372813578]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=1695200740]
+tree_root = SubResource("AnimationNodeStateMachine_q0v0f")
+anim_player = NodePath("../AnimationPlayer")

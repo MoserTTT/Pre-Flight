@@ -115,4 +115,3 @@ camera_pitch_max = null
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1494117937]
 stream = SubResource("AudioStreamMP3_f3sb7")
 volume_db = -25.0
-autoplay = true
