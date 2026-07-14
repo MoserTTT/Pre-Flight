@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://yt65lmf5xlsy"]
+
+[ext_resource type="PackedScene" uid="uid://cvcepuuh4os5x" path="res://Char2Animations.glb" id="1_kfll5"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kfll5"]
+animation = &"Crack Idle_002"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1vms0"]
+animation = &"Crack Static Jump_002_FBX Retarget"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mehyj"]
+animation = &"Crack Walking Foward_002_FBX_001 Retarget"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x3dit"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lwv1l"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_egqet"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kfll5"]
+xfade_time = 0.2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1vms0"]
+xfade_time = 0.2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_2uskq"]
+states/Idle/node = SubResource("AnimationNodeAnimation_kfll5")
+states/Idle/position = Vector2(338, 131)
+states/Jump/node = SubResource("AnimationNodeAnimation_1vms0")
+states/Jump/position = Vector2(303, 247)
+states/Running/node = SubResource("AnimationNodeAnimation_mehyj")
+states/Running/position = Vector2(656, 204)
+states/Start/position = Vector2(168, 131)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_x3dit"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_lwv1l"), "Idle", "Running", SubResource("AnimationNodeStateMachineTransition_egqet"), "Running", "Idle", SubResource("AnimationNodeStateMachineTransition_kfll5"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_1vms0")]
+
+[node name="Char2Animations" unique_id=2096690830 instance=ExtResource("1_kfll5")]
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="82" unique_id=1999580460]
+tree_root = SubResource("AnimationNodeStateMachine_2uskq")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/jump = false
+parameters/conditions/walk = false
