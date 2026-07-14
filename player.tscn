@@ -1,29 +1,30 @@
 [gd_scene format=3 uid="uid://dhhr23e1b4ikq"]
 
 [ext_resource type="Script" uid="uid://6otjgb3haspm" path="res://player.gd" id="1_4flbx"]
-[ext_resource type="PackedScene" uid="uid://cswlhw53y346d" path="res://balling.tscn" id="2_onrkg"]
-[ext_resource type="PackedScene" uid="uid://yt65lmf5xlsy" path="res://crack.tscn" id="3_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://dky57op7rrd5o" path="res://throwableBottle.tscn" id="2_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://d1tflo2xryi3q" path="res://cracky.tscn" id="3_i3pqv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
-radius = 0.2944336
-height = 0.8442383
+radius = 0.266
+height = 1.2326094
 
 [node name="Player" type="CharacterBody3D" unique_id=1016498966]
 script = ExtResource("1_4flbx")
-ball_scene = ExtResource("2_onrkg")
+bottle_scene = ExtResource("2_i3pqv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=851632777]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1253969, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.616042, 0)
 shape = SubResource("CapsuleShape3D_sh265")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=52336113]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=512871198]
+spring_length = 3.5
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1952972820]
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=76265513]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5286908)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20501983, 0.6282011, -0.5286908)
 
-[node name="Model" parent="." unique_id=1832678472 instance=ExtResource("3_i3pqv")]
+[node name="Model" parent="." unique_id=701297248 instance=ExtResource("3_i3pqv")]
