@@ -27,25 +27,359 @@ advance_condition = &"walk"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kfll5"]
 xfade_time = 0.2
 advance_mode = 2
+advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1vms0"]
 xfade_time = 0.2
 advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mehyj"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"JumpFromRun"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_2uskq"]
 states/Idle/node = SubResource("AnimationNodeAnimation_kfll5")
 states/Idle/position = Vector2(338, 131)
 states/Jump/node = SubResource("AnimationNodeAnimation_1vms0")
-states/Jump/position = Vector2(303, 247)
+states/Jump/position = Vector2(416, 301)
 states/Running/node = SubResource("AnimationNodeAnimation_mehyj")
-states/Running/position = Vector2(656, 204)
+states/Running/position = Vector2(656, 203)
 states/Start/position = Vector2(168, 131)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_x3dit"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_lwv1l"), "Idle", "Running", SubResource("AnimationNodeStateMachineTransition_egqet"), "Running", "Idle", SubResource("AnimationNodeStateMachineTransition_kfll5"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_1vms0")]
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_x3dit"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_lwv1l"), "Idle", "Running", SubResource("AnimationNodeStateMachineTransition_egqet"), "Running", "Idle", SubResource("AnimationNodeStateMachineTransition_kfll5"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_1vms0"), "Running", "Jump", SubResource("AnimationNodeStateMachineTransition_mehyj")]
 
-[node name="Char2Animations" unique_id=2096690830 instance=ExtResource("1_kfll5")]
+[node name="Char2Animations" unique_id=412777507 instance=ExtResource("1_kfll5")]
+
+[node name="metarig" parent="." index="0" unique_id=1862396014]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="metarig" index="0" unique_id=1792533778]
+bones/0/position = Vector3(0.017028114, 0.3994646, -0.017281072)
+bones/0/rotation = Quaternion(0.06723223, 0.038784444, -0.010089106, 0.99693227)
+bones/1/position = Vector3(2.6235245e-10, 0.105585225, 2.0443132e-08)
+bones/1/rotation = Quaternion(-0.098467365, -2.372594e-07, -2.3476352e-08, 0.9951404)
+bones/2/position = Vector3(1.5809113e-09, 0.063874155, -3.0446463e-09)
+bones/2/rotation = Quaternion(-0.0104926415, 5.0481612e-14, 5.2509377e-15, 0.9999449)
+bones/2/scale = Vector3(1, 0.9999998, 0.9999999)
+bones/3/position = Vector3(-7.1600814e-10, 0.08149476, -1.023838e-09)
+bones/3/rotation = Quaternion(0.0034470134, 2.0147956e-15, -1.6487011e-15, 0.99999404)
+bones/3/scale = Vector3(1, 1, 1.0000001)
+bones/4/position = Vector3(-1.6356741e-10, 0.090745285, -3.5618765e-08)
+bones/4/rotation = Quaternion(0.3714627, 2.4412712e-13, -6.401893e-14, 0.92844784)
+bones/4/scale = Vector3(1, 0.9999999, 0.99999994)
+bones/5/position = Vector3(8.892467e-10, 0.037852015, -1.2223149e-08)
+bones/5/rotation = Quaternion(-0.15777218, -2.3425896e-14, -1.0514092e-14, 0.9874755)
+bones/5/scale = Vector3(1, 0.9999998, 0.9999998)
+bones/6/position = Vector3(-9.527037e-10, 0.03125746, -2.1272566e-08)
+bones/6/rotation = Quaternion(-0.19444303, -0.04041954, -0.0012638211, 0.98007995)
+bones/7/position = Vector3(0.0183, 0.060969085, 0.07813894)
+bones/7/rotation = Quaternion(-0.6029459, -0.37010846, -0.39568532, 0.5855844)
+bones/7/scale = Vector3(1, 1.0000002, 1)
+bones/8/position = Vector3(-0.027586684, 0.17642017, -0.044071235)
+bones/8/rotation = Quaternion(-0.2938547, 0.52675515, -0.37859845, 0.7020268)
+bones/8/scale = Vector3(1.0000001, 1.0000001, 1)
+bones/9/position = Vector3(-1.096533e-08, 0.25142148, -8.630243e-09)
+bones/9/rotation = Quaternion(-0.05363795, 0.16626465, -0.18405055, 0.96726656)
+bones/10/position = Vector3(-2.1623233e-08, 0.17151335, -1.0515567e-08)
+bones/10/rotation = Quaternion(-0.0051859613, -0.81540126, -0.03429333, 0.5778564)
+bones/10/scale = Vector3(0.99999994, 1, 0.99999994)
+bones/11/position = Vector3(-0.018299997, 0.060969096, 0.07813894)
+bones/11/rotation = Quaternion(-0.6011105, 0.37015614, 0.38066468, 0.5972814)
+bones/11/scale = Vector3(1.0000001, 1.0000002, 1)
+bones/12/position = Vector3(0.02758668, 0.17642012, -0.044071186)
+bones/12/rotation = Quaternion(-0.34379926, -0.53620327, 0.34610704, 0.6888382)
+bones/12/scale = Vector3(0.9999999, 0.9999999, 0.9999998)
+bones/13/position = Vector3(2.8962383e-08, 0.25142148, 2.2305042e-09)
+bones/13/rotation = Quaternion(-0.034886487, -0.1631011, 0.18348373, 0.9687697)
+bones/13/scale = Vector3(0.9999998, 1, 1.0000001)
+bones/14/position = Vector3(-4.275797e-08, 0.17151336, -1.1825833e-08)
+bones/14/rotation = Quaternion(0.012508605, 0.8145536, 0.069608375, 0.5757609)
+bones/14/scale = Vector3(0.99999994, 1, 0.9999998)
+bones/15/position = Vector3(0.1184, -0.00028299986, -0.042695653)
+bones/15/rotation = Quaternion(-5.4979104e-08, 0.68534327, 0.72822016, -5.1741974e-08)
+bones/15/scale = Vector3(1, 1, 1)
+bones/16/position = Vector3(-0.1184, -0.00028302224, -0.042695653)
+bones/16/rotation = Quaternion(-5.4979104e-08, 0.68534327, 0.72822016, -5.1741974e-08)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/position = Vector3(-1.9413632e-08, -0.00025637046, -0.00093288865)
+bones/17/rotation = Quaternion(-0.18345465, -0.5929008, -0.57608014, 0.53192544)
+bones/18/position = Vector3(1.8432738e-08, -0.00025638944, -0.00093287847)
+bones/18/rotation = Quaternion(-0.18345511, 0.59290063, 0.57608, 0.5319257)
+bones/18/scale = Vector3(1, 1, 1)
+bones/19/position = Vector3(0.09800002, -0.040386993, -0.04128266)
+bones/19/rotation = Quaternion(0.9697168, -0.0014130524, -0.002406981, 0.2442163)
+bones/19/scale = Vector3(1, 0.99999994, 0.99999905)
+bones/20/position = Vector3(1.218575e-09, 0.19488303, 1.6432223e-08)
+bones/20/rotation = Quaternion(0.23546529, -3.2335916e-05, 0.00012270246, 0.9718828)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/position = Vector3(2.44426e-09, 0.13565537, -3.7029881e-09)
+bones/21/rotation = Quaternion(-0.66538554, 0.05253756, 0.035849705, 0.74378544)
+bones/21/scale = Vector3(1, 0.99999994, 1)
+bones/22/position = Vector3(1.4955228e-09, 0.1126804, 2.7729463e-09)
+bones/22/rotation = Quaternion(2.0412739e-07, 0.9885871, -0.1506507, 3.1033383e-07)
+bones/23/position = Vector3(-0.038000137, -0.008505027, 0.092272855)
+bones/23/rotation = Quaternion(0.6845145, 0.68451405, -0.17731328, 0.17731443)
+bones/24/position = Vector3(-0.09799998, -0.040387005, -0.04128277)
+bones/24/rotation = Quaternion(0.97385156, 0.0014805513, 0.007689631, 0.22705036)
+bones/24/scale = Vector3(1, 0.99999994, 0.99999934)
+bones/25/position = Vector3(3.6366286e-09, 0.19488308, 1.2214963e-08)
+bones/25/rotation = Quaternion(0.21821757, -0.00030537252, -0.00047321228, 0.97590005)
+bones/25/scale = Vector3(1, 1, 1)
+bones/26/position = Vector3(1.2585058e-08, 0.13565537, -2.7621744e-10)
+bones/26/rotation = Quaternion(-0.66461056, 0.054834362, 0.022112241, 0.74484694)
+bones/26/scale = Vector3(1, 1.0000001, 1.0000001)
+bones/27/position = Vector3(5.0369167e-09, 0.11268038, 1.2671393e-09)
+bones/27/rotation = Quaternion(-2.0412828e-07, 0.9885871, -0.1506507, -3.1033375e-07)
+bones/27/scale = Vector3(1, 0.99999976, 1.0000001)
+bones/28/position = Vector3(0.03800016, -0.008505016, 0.092272855)
+bones/28/rotation = Quaternion(0.6845142, -0.6845139, 0.17731427, 0.17731541)
+bones/28/scale = Vector3(1, 1, 1.0000001)
+
+[node name="WGT-rig_spine_fk" parent="." index="1" unique_id=579730311]
+visible = false
+
+[node name="WGT-rig_spine_fk_001" parent="." index="2" unique_id=1374966161]
+visible = false
+
+[node name="WGT-rig_spine_fk_002" parent="." index="3" unique_id=242576572]
+visible = false
+
+[node name="WGT-rig_spine_fk_003" parent="." index="4" unique_id=818689472]
+visible = false
+
+[node name="WGT-rig_tweak_spine" parent="." index="5" unique_id=844902366]
+visible = false
+
+[node name="WGT-rig_tweak_spine_001" parent="." index="6" unique_id=1419731845]
+visible = false
+
+[node name="WGT-rig_tweak_spine_002" parent="." index="7" unique_id=1054015222]
+visible = false
+
+[node name="WGT-rig_tweak_spine_003" parent="." index="8" unique_id=847166128]
+visible = false
+
+[node name="WGT-rig_tweak_spine_004" parent="." index="9" unique_id=1871786408]
+visible = false
+
+[node name="WGT-rig_torso" parent="." index="10" unique_id=179677704]
+visible = false
+
+[node name="WGT-rig_hips" parent="." index="11" unique_id=1022141640]
+visible = false
+
+[node name="WGT-rig_chest" parent="." index="12" unique_id=1401817509]
+visible = false
+
+[node name="WGT-rig_breast_L" parent="." index="13" unique_id=1531939893]
+visible = false
+
+[node name="WGT-rig_breast_R" parent="." index="14" unique_id=1283104074]
+visible = false
+
+[node name="WGT-rig_shoulder_L" parent="." index="15" unique_id=772287954]
+visible = false
+
+[node name="WGT-rig_upper_arm_parent_L" parent="." index="16" unique_id=1171692015]
+visible = false
+
+[node name="WGT-rig_upper_arm_fk_L" parent="." index="17" unique_id=760400119]
+visible = false
+
+[node name="WGT-rig_forearm_fk_L" parent="." index="18" unique_id=1606188295]
+visible = false
+
+[node name="WGT-rig_hand_fk_L" parent="." index="19" unique_id=889248552]
+visible = false
+
+[node name="WGT-rig_upper_arm_ik_L" parent="." index="20" unique_id=780039078]
+visible = false
+
+[node name="WGT-rig_upper_arm_ik_target_L" parent="." index="21" unique_id=1462914823]
+visible = false
+
+[node name="WGT-rig_hand_ik_L" parent="." index="22" unique_id=1379839858]
+visible = false
+
+[node name="WGT-rig_VIS_upper_arm_ik_pole_L" parent="." index="23" unique_id=1376170376]
+visible = false
+
+[node name="WGT-rig_upper_arm_tweak_L" parent="." index="24" unique_id=1970792376]
+visible = false
+
+[node name="WGT-rig_upper_arm_tweak_L_001" parent="." index="25" unique_id=1070402735]
+visible = false
+
+[node name="WGT-rig_forearm_tweak_L" parent="." index="26" unique_id=1267607133]
+visible = false
+
+[node name="WGT-rig_forearm_tweak_L_001" parent="." index="27" unique_id=638213994]
+visible = false
+
+[node name="WGT-rig_hand_tweak_L" parent="." index="28" unique_id=583414939]
+visible = false
+
+[node name="WGT-rig_shoulder_R" parent="." index="29" unique_id=1688792394]
+visible = false
+
+[node name="WGT-rig_upper_arm_parent_R" parent="." index="30" unique_id=1608843815]
+visible = false
+
+[node name="WGT-rig_upper_arm_fk_R" parent="." index="31" unique_id=155981499]
+visible = false
+
+[node name="WGT-rig_forearm_fk_R" parent="." index="32" unique_id=1787885551]
+visible = false
+
+[node name="WGT-rig_hand_fk_R" parent="." index="33" unique_id=2093376436]
+visible = false
+
+[node name="WGT-rig_upper_arm_ik_R" parent="." index="34" unique_id=1889786646]
+visible = false
+
+[node name="WGT-rig_upper_arm_ik_target_R" parent="." index="35" unique_id=1517371874]
+visible = false
+
+[node name="WGT-rig_hand_ik_R" parent="." index="36" unique_id=1597218461]
+visible = false
+
+[node name="WGT-rig_VIS_upper_arm_ik_pole_R" parent="." index="37" unique_id=838061315]
+visible = false
+
+[node name="WGT-rig_upper_arm_tweak_R" parent="." index="38" unique_id=651060994]
+visible = false
+
+[node name="WGT-rig_upper_arm_tweak_R_001" parent="." index="39" unique_id=1995478126]
+visible = false
+
+[node name="WGT-rig_forearm_tweak_R" parent="." index="40" unique_id=625071277]
+visible = false
+
+[node name="WGT-rig_forearm_tweak_R_001" parent="." index="41" unique_id=1169631952]
+visible = false
+
+[node name="WGT-rig_hand_tweak_R" parent="." index="42" unique_id=1885521415]
+visible = false
+
+[node name="WGT-rig_neck" parent="." index="43" unique_id=358299362]
+visible = false
+
+[node name="WGT-rig_head" parent="." index="44" unique_id=868984659]
+visible = false
+
+[node name="WGT-rig_tweak_spine_005" parent="." index="45" unique_id=1056397265]
+visible = false
+
+[node name="WGT-rig_thigh_parent_L" parent="." index="46" unique_id=678956602]
+visible = false
+
+[node name="WGT-rig_thigh_fk_L" parent="." index="47" unique_id=1307164082]
+visible = false
+
+[node name="WGT-rig_shin_fk_L" parent="." index="48" unique_id=1586738505]
+visible = false
+
+[node name="WGT-rig_foot_fk_L" parent="." index="49" unique_id=1528915975]
+visible = false
+
+[node name="WGT-rig_toe_fk_L" parent="." index="50" unique_id=1101035888]
+visible = false
+
+[node name="WGT-rig_thigh_ik_L" parent="." index="51" unique_id=299607882]
+visible = false
+
+[node name="WGT-rig_thigh_ik_target_L" parent="." index="52" unique_id=2005449442]
+visible = false
+
+[node name="WGT-rig_foot_ik_L" parent="." index="53" unique_id=1365668095]
+visible = false
+
+[node name="WGT-rig_VIS_thigh_ik_pole_L" parent="." index="54" unique_id=2002705661]
+visible = false
+
+[node name="WGT-rig_thigh_tweak_L" parent="." index="55" unique_id=31824389]
+visible = false
+
+[node name="WGT-rig_thigh_tweak_L_001" parent="." index="56" unique_id=2088961943]
+visible = false
+
+[node name="WGT-rig_shin_tweak_L" parent="." index="57" unique_id=1287280922]
+visible = false
+
+[node name="WGT-rig_shin_tweak_L_001" parent="." index="58" unique_id=154578722]
+visible = false
+
+[node name="WGT-rig_foot_tweak_L" parent="." index="59" unique_id=464976059]
+visible = false
+
+[node name="WGT-rig_foot_spin_ik_L" parent="." index="60" unique_id=170451482]
+visible = false
+
+[node name="WGT-rig_foot_heel_ik_L" parent="." index="61" unique_id=1861137635]
+visible = false
+
+[node name="WGT-rig_toe_ik_L" parent="." index="62" unique_id=935531406]
+visible = false
+
+[node name="WGT-rig_thigh_parent_R" parent="." index="63" unique_id=335091065]
+visible = false
+
+[node name="WGT-rig_thigh_fk_R" parent="." index="64" unique_id=1419030396]
+visible = false
+
+[node name="WGT-rig_shin_fk_R" parent="." index="65" unique_id=1146419609]
+visible = false
+
+[node name="WGT-rig_foot_fk_R" parent="." index="66" unique_id=1886227578]
+visible = false
+
+[node name="WGT-rig_toe_fk_R" parent="." index="67" unique_id=955333318]
+visible = false
+
+[node name="WGT-rig_thigh_ik_R" parent="." index="68" unique_id=1619816088]
+visible = false
+
+[node name="WGT-rig_thigh_ik_target_R" parent="." index="69" unique_id=556236306]
+visible = false
+
+[node name="WGT-rig_foot_ik_R" parent="." index="70" unique_id=1078121607]
+visible = false
+
+[node name="WGT-rig_VIS_thigh_ik_pole_R" parent="." index="71" unique_id=1471087561]
+visible = false
+
+[node name="WGT-rig_thigh_tweak_R" parent="." index="72" unique_id=1876884984]
+visible = false
+
+[node name="WGT-rig_thigh_tweak_R_001" parent="." index="73" unique_id=278922383]
+visible = false
+
+[node name="WGT-rig_shin_tweak_R" parent="." index="74" unique_id=1592488885]
+visible = false
+
+[node name="WGT-rig_shin_tweak_R_001" parent="." index="75" unique_id=478996111]
+visible = false
+
+[node name="WGT-rig_foot_tweak_R" parent="." index="76" unique_id=1375012185]
+visible = false
+
+[node name="WGT-rig_foot_spin_ik_R" parent="." index="77" unique_id=470481493]
+visible = false
+
+[node name="WGT-rig_foot_heel_ik_R" parent="." index="78" unique_id=1130279367]
+visible = false
+
+[node name="WGT-rig_toe_ik_R" parent="." index="79" unique_id=525651836]
+visible = false
+
+[node name="WGT-rig_root" parent="." index="80" unique_id=68017235]
+visible = false
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="82" unique_id=1999580460]
 tree_root = SubResource("AnimationNodeStateMachine_2uskq")
 anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/JumpFromRun = false
+parameters/conditions/idle = false
 parameters/conditions/jump = false
 parameters/conditions/walk = false

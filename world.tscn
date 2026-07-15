@@ -107,7 +107,6 @@ walk_speed = null
 sprint_speed = null
 jump_velocity = null
 rotation_speed = null
-ball_velocity = null
 mouse_sensitivity = null
 camera_pitch_min = null
 camera_pitch_max = null

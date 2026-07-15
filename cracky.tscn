@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://d1tflo2xryi3q"]
+
+[ext_resource type="PackedScene" uid="uid://vm1ml5shenu" path="res://Char2AnimationsEdited.glb" id="1_18k11"]
+[ext_resource type="Script" uid="uid://kp8swvpvjq40" path="res://cracky.gd" id="2_rcow5"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mufje"]
+animation = &"Crack Grab Retarget 002"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_18k11"]
+animation = &"Crack Idle_002_real"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rcow5"]
+animation = &"Crack Walking Foward_002_real"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f7cyb"]
+animation = &"Static Jump Edited"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mufje"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mug15"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hnl3n"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1j6xe"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pmxrs"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_18k11"]
+xfade_time = 0.2
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tewof"]
+advance_mode = 2
+advance_condition = &"throw"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q6vvq"]
+advance_mode = 2
+advance_condition = &"throw"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fkanb"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_tewof"]
+"states/Crack Grab Retarget 002/node" = SubResource("AnimationNodeAnimation_mufje")
+"states/Crack Grab Retarget 002/position" = Vector2(559, -25)
+"states/Crack Idle_002_real/node" = SubResource("AnimationNodeAnimation_18k11")
+"states/Crack Idle_002_real/position" = Vector2(404.2, 112.2)
+"states/Crack Walking Foward_002_real/node" = SubResource("AnimationNodeAnimation_rcow5")
+"states/Crack Walking Foward_002_real/position" = Vector2(726, 113)
+"states/Static Jump Edited/node" = SubResource("AnimationNodeAnimation_f7cyb")
+"states/Static Jump Edited/position" = Vector2(641, 266)
+transitions = ["Start", "Crack Idle_002_real", SubResource("AnimationNodeStateMachineTransition_mufje"), "Crack Idle_002_real", "Crack Walking Foward_002_real", SubResource("AnimationNodeStateMachineTransition_mug15"), "Crack Idle_002_real", "Static Jump Edited", SubResource("AnimationNodeStateMachineTransition_hnl3n"), "Crack Walking Foward_002_real", "Crack Idle_002_real", SubResource("AnimationNodeStateMachineTransition_1j6xe"), "Crack Walking Foward_002_real", "Static Jump Edited", SubResource("AnimationNodeStateMachineTransition_pmxrs"), "Static Jump Edited", "Crack Idle_002_real", SubResource("AnimationNodeStateMachineTransition_18k11"), "Crack Idle_002_real", "Crack Grab Retarget 002", SubResource("AnimationNodeStateMachineTransition_tewof"), "Crack Walking Foward_002_real", "Crack Grab Retarget 002", SubResource("AnimationNodeStateMachineTransition_q6vvq"), "Crack Grab Retarget 002", "Crack Idle_002_real", SubResource("AnimationNodeStateMachineTransition_fkanb")]
+graph_offset = Vector2(87, -127)
+
+[node name="Char2AnimationsEdited" unique_id=1803385866 instance=ExtResource("1_18k11")]
+script = ExtResource("2_rcow5")
+
+[node name="metarig" parent="." index="0" unique_id=890020226]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.036331654, 0, 0)
+
+[node name="Skeleton3D" parent="metarig" index="0" unique_id=1136919396]
+bones/0/position = Vector3(-0.048861608, 0.39957118, -0.008725472)
+bones/0/rotation = Quaternion(0.08071113, 0.08001979, 0.013431649, 0.9934295)
+bones/3/rotation = Quaternion(0.0034470134, 3.509631e-15, -3.744563e-15, 0.99999404)
+bones/6/rotation = Quaternion(-0.20754087, 0.0013756461, -0.07170371, 0.975594)
+bones/7/rotation = Quaternion(-0.59344167, -0.3696761, -0.41181728, 0.58444256)
+bones/8/rotation = Quaternion(-0.24588613, 0.59133226, -0.44267023, 0.62762195)
+bones/9/rotation = Quaternion(-0.00417511, 0.2165569, -0.2101762, 0.95336854)
+bones/10/rotation = Quaternion(-0.09191272, -0.80467284, -0.06151689, 0.5833262)
+bones/11/rotation = Quaternion(-0.5745151, 0.3965059, 0.37429374, 0.6104259)
+bones/12/rotation = Quaternion(-0.27187353, -0.49964693, 0.41235143, 0.71162075)
+bones/13/rotation = Quaternion(-0.046762057, -0.13534805, 0.19343866, 0.97060585)
+bones/14/rotation = Quaternion(0.0011465838, 0.8069153, 0.090327084, 0.5837187)
+bones/15/rotation = Quaternion(-5.49791e-08, 0.68534327, 0.72822016, -5.1741964e-08)
+bones/16/rotation = Quaternion(-5.49791e-08, 0.68534327, 0.72822016, -5.1741964e-08)
+bones/19/rotation = Quaternion(0.97467804, -0.00716796, -0.014700982, 0.2230142)
+bones/20/rotation = Quaternion(0.15329567, -0.0034941058, -0.01038112, 0.9881198)
+bones/21/rotation = Quaternion(-0.63947016, 0.05372095, 0.084227525, 0.76229775)
+bones/24/rotation = Quaternion(0.95695144, 0.004934472, -0.008303789, 0.29008722)
+bones/25/rotation = Quaternion(0.3157836, 4.4135144e-05, 0.010963675, 0.94876796)
+bones/26/rotation = Quaternion(-0.688741, 0.071614526, 0.051453654, 0.7196248)
+bones/27/rotation = Quaternion(-2.041238e-07, 0.9885871, -0.1506507, -3.1033377e-07)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=432959840]
+tree_root = SubResource("AnimationNodeStateMachine_tewof")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/idle = false
+parameters/conditions/jump = false
+parameters/conditions/throw = false
+parameters/conditions/walk = false
