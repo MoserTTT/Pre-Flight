@@ -11,6 +11,7 @@ ambient_light_color = Color(1, 1, 1, 1)
 [node name="Welt" type="Node3D" unique_id=1081608641]
 
 [node name="Parking" parent="." unique_id=1011660245 instance=ExtResource("1_4gxou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00028657913, -0.011211753, 0.00045490265)
 
 [node name="Player" parent="." unique_id=1016498966 instance=ExtResource("2_rpup3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.495577, 1.9132862, -9.935269)
@@ -59,7 +60,7 @@ transform = Transform3D(4.0312986, 0, 0, 0, 1, 0, 0, 0, 1, 4.1790915, 2.309279, 
 size = Vector3(0.057128906, 4.741028, 4.3588867)
 
 [node name="metal_office_desk_4k" parent="." unique_id=1698380434 instance=ExtResource("3_rpup3")]
-transform = Transform3D(-1.8348236, 0, 0.025463223, 0, 1.835, 0, -0.025463223, 0, -1.8348236, -2.5621216, -0.016093612, 16.052275)
+transform = Transform3D(-1.8348236, 0, 0.025463223, 0, 1.835, 0, -0.025463223, 0, -1.8348236, -2.561835, -0.027305365, 16.05273)
 
 [node name="fire_alarm_4k" parent="." unique_id=568073928 instance=ExtResource("4_4akue")]
 transform = Transform3D(-5.8099985, 0, -0.004426934, 0, 5.81, 0, 0.004426934, 0, -5.8099985, -4.6372833, 2.1617188, 16.85848)
