@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://dvqbo7w0fou2y"]
+
+[ext_resource type="PackedScene" uid="uid://blneyf01pyiw1" path="res://garage.tscn" id="1_jjwqh"]
+[ext_resource type="PackedScene" uid="uid://dhhr23e1b4ikq" path="res://player.tscn" id="2_yg5af"]
+[ext_resource type="Script" uid="uid://j8imt41w3n6a" path="res://enemy.gd" id="3_yg5af"]
+
+[sub_resource type="Environment" id="Environment_r1115"]
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_fe31j"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2.4399278, 0, -4, 0, 0, 0, 0, 0, 0, 2.2004495, 0, -4),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Welt" type="Node3D" unique_id=1081608641]
+
+[node name="Parking" parent="." unique_id=1011660245 instance=ExtResource("1_jjwqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04176879, 0.019998074, 0.0036230087)
+
+[node name="Player" parent="." unique_id=1016498966 instance=ExtResource("2_yg5af")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.495577, 1.9132862, -9.935269)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1411036464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5261178, 0)
+use_collision = true
+size = Vector3(100, 1, 100)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=119006555]
+environment = SubResource("Environment_r1115")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=960086149]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0, 0)
+light_color = Color(1, 1, 0.56078434, 1)
+shadow_enabled = true
+shadow_bias = 0.5
+shadow_reverse_cull_face = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1270712839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.149026, -10.485351)
+omni_range = 20.993458
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1751195457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.149026, 8.365632)
+omni_range = 20.993458
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=115476672]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.89913, 2.149026, 7.298341)
+omni_range = 20.993458
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=180699107]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.10222, 2.149026, 19.99522)
+omni_range = 20.993458
+
+[node name="1_4" type="CSGBox3D" parent="." unique_id=146043035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 0)
+use_collision = true
+size = Vector3(39, 4, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="1_4" unique_id=1941991501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.44744873, -7)
+size = Vector3(1, 2.1051025, 1)
+
+[node name="Path3D" type="Path3D" parent="1_4" unique_id=1813504819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+curve = SubResource("Curve3D_fe31j")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="1_4/Path3D" unique_id=1805571604]
+transform = Transform3D(-4.3711378e-08, 0, 0.99999976, 0, 1, 0, -0.99999976, 0, -4.3711378e-08, -1.0640477, 0, -4)
+progress = 7.9048
+
+[node name="EnemySubst" type="CSGSphere3D" parent="1_4/Path3D/PathFollow3D" unique_id=2045734442]
+use_collision = true
+script = ExtResource("3_yg5af")
+movement_speed = 2.5

@@ -39,7 +39,88 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Cube_001": {
+"generate/physics": true
+},
+"PATH:Cube_002": {
+"generate/physics": true
+},
+"PATH:Cube_004": {
+"generate/physics": true
+},
+"PATH:Cube_012": {
+"generate/physics": true
+},
+"PATH:Cube_014": {
+"generate/physics": true
+},
+"PATH:Cube_015": {
+"generate/physics": true
+},
+"PATH:Cube_016": {
+"generate/physics": true
+},
+"PATH:Cube_017": {
+"generate/physics": true
+},
+"PATH:Cube_018": {
+"generate/physics": true
+},
+"PATH:Cube_019": {
+"generate/physics": true
+},
+"PATH:Cube_023": {
+"generate/physics": true
+},
+"PATH:Cube_024": {
+"generate/physics": true
+},
+"PATH:estructura columnes 1": {
+"generate/physics": true
+},
+"PATH:estructura columnes 1_001": {
+"generate/physics": true
+},
+"PATH:ramp": {
+"generate/physics": true
+},
+"PATH:ramp_001": {
+"generate/physics": true
+},
+"PATH:sostre": {
+"generate/physics": true
+},
+"PATH:terra": {
+"generate/physics": true
+},
+"PATH:terra_001": {
+"generate/physics": true
+},
+"PATH:wall": {
+"generate/physics": true
+},
+"PATH:wall ramp 1_002": {
+"generate/physics": true
+},
+"PATH:wall ramp 1_003": {
+"generate/physics": true
+},
+"PATH:wall ramp 1_1": {
+"generate/physics": true
+},
+"PATH:wall ramp1_001": {
+"generate/physics": true
+},
+"PATH:wall ramp1_002": {
+"generate/physics": true
+},
+"PATH:wall_001": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
 gltf/texture_map_mode=1

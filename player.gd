@@ -30,11 +30,14 @@ var isShrunk : bool = false
 @export var hoverTime : float = 0.65
 var hoverTimeRemaining : float = 0.0
 var isSticky = false
+@export var MAX_BOTTLES := 3
+
+var bottles: Array[RigidBody3D] = []
 
 ## --- Other ---
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var anim_tree: AnimationTree =$Model/AnimationTree
-var bottle
+
 
 # recipients of calls sent from the animation track to sync physics and animation
 func apply_jump()->void:
@@ -44,16 +47,29 @@ func end_jump()->void:
 	anim_tree.set("parameters/conditions/jump", false)
 	
 func throw_bottle()->void:
-	bottle = bottle_scene.instantiate()
+	if bottles.size() == MAX_BOTTLES:
+		bottles.front().queue_free()
+		bottles.pop_front()
+	var bottle = bottle_scene.instantiate()
 	bottle.isSticky = self.isSticky
 	get_tree().current_scene.add_child(bottle)
 	bottle.global_position = $Marker3D.global_position
 	bottle.global_basis= $Marker3D.global_basis
+
 	var throw_direction := -spring_arm.global_transform.basis.z.normalized()
 	bottle.linear_velocity = throw_direction * bottle_velocity
+	bottles.push_back(bottle)
 	anim_tree.set("parameters/conditions/throw", false)
 
+
 ## Ability functions
+func on_shrink_animation_ended():
+		if isShrunk:
+			unShrink()
+			isShrunk = false
+		else: 
+			shrink(shrinkFactor)
+			isShrunk = true
 func shrink(factor : float) -> void:
 	scale = Vector3(factor,factor,factor)
 	jump_velocity *= 0.75
@@ -119,13 +135,8 @@ func _physics_process(delta: float) -> void:
 	
 	#Shrink
 	if Input.is_action_just_pressed("shrink"): 
-		if isShrunk:
-			unShrink()
-			isShrunk = false
-		else: 
-			shrink(shrinkFactor)
-			isShrunk = true
-	
+		$AnimationPlayer.play("CloudExplosion")
+		
 	#Sticky
 	if Input.is_action_just_pressed("toggle_sticky"):
 		if isSticky:
