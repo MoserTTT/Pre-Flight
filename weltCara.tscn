@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://blneyf01pyiw1" path="res://garage.tscn" id="1_rikbr"]
 [ext_resource type="PackedScene" uid="uid://dhhr23e1b4ikq" path="res://player.tscn" id="2_16obh"]
+[ext_resource type="PackedScene" uid="uid://bwjudthjj1rlb" path="res://garage_door.glb" id="3_16obh"]
 
 [sub_resource type="Environment" id="Environment_r1115"]
 ambient_light_color = Color(1, 1, 1, 1)
@@ -95,3 +96,6 @@ omni_range = 20.993458
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7630963, 0.61749506, 16.482613)
 use_collision = true
 size = Vector3(1.6934814, 1.2432861, 1)
+
+[node name="Sketchfab_Scene" parent="." unique_id=79998154 instance=ExtResource("3_16obh")]
+transform = Transform3D(-0.008590439, 0, -0.99667835, 0, 0.7541497, 0, 1.6516668, 0, -0.005183797, 15.270435, 1.5065145, 7.50909)
