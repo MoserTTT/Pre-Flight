@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://6otjgb3haspm" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://dky57op7rrd5o" path="res://throwableBottle.tscn" id="2_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://d1tflo2xryi3q" path="res://cracky.tscn" id="3_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://bn7x8g3blvpmk" path="res://bottle_red_float.tscn" id="4_hqtel"]
+[ext_resource type="PackedScene" uid="uid://bflb0fmshb0f7" path="res://bottle_yellow_sticky.tscn" id="5_sweqy"]
+[ext_resource type="PackedScene" uid="uid://dwh4nemb2wyx" path="res://hud.tscn" id="6_2hs0m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 radius = 0.266
@@ -49,20 +52,90 @@ tracks/0/path = NodePath("Cloud")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+tracks/1/type = "scale_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottleRed_float")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BottleYellow_sticky")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.2836347, 0, 0, 0.9589324)
 
 [sub_resource type="Animation" id="Animation_sweqy"]
 resource_name = "StickyActivation"
+
+[sub_resource type="Animation" id="Animation_1jxqw"]
+resource_name = "drink_yellow"
+length = 0.35
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BottleYellow_sticky")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.2836347, 0, 0, 0.9589324, 0.21666667, 1, -0.41488177, 0, 0, 0.90987533, 0.34666666, 1, -0.08250389, 0, 0, 0.9965908)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottleYellow_sticky")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.7144101, 0.36534923, 0.13, 1, 0, 0.81624407, 0.36534923, 0.3033333, 1, 0, 0.65491647, 0.36534923)
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.35),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_drink_animation_ended"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_2hs0m"]
+resource_name = "schweben"
+length = 0.65
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BottleRed_float")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.033333335, 1, 1, 1, 1, 0.121333346, 1, 4, 4, 4, 0.19833334, 1, 8, 8, 8, 0.27533334, 1, 10, 10, 10, 0.6, 1, 1, 1, 1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BottleRed_float")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.033333335, 1, -0.7, 0.257, 0, 0.11033334, 1, -0.059642076, 1.5591478, 0, 0.19833334, 1, -0.059642076, 3.2072148, 0, 0.27533334, 1, -0.06, 3.5, 0, 0.6, 1, -0.7, 0.257, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hqtel"]
 _data = {
 &"CloudExplosion": SubResource("Animation_i3pqv"),
 &"RESET": SubResource("Animation_hqtel"),
-&"StickyActivation": SubResource("Animation_sweqy")
+&"StickyActivation": SubResource("Animation_sweqy"),
+&"drink_yellow": SubResource("Animation_1jxqw"),
+&"schweben": SubResource("Animation_2hs0m")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3pqv"]
 albedo_color = Color(0.7238435, 0.7803683, 0.8112042, 1)
 emission_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8ao5v"]
+radius = 0.44506836
+height = 1.4055176
 
 [node name="Player" type="CharacterBody3D" unique_id=1016498966]
 script = ExtResource("1_4flbx")
@@ -81,7 +154,7 @@ spring_length = 3.5
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1952972820]
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=76265513]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3626368, 0.3197825, -0.020828724)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3626368, 0.7477357, 0.70750636)
 
 [node name="Model" parent="." unique_id=701297248 instance=ExtResource("3_i3pqv")]
 
@@ -89,6 +162,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3626368, 0.3197825, -0.020
 libraries/ = SubResource("AnimationLibrary_hqtel")
 
 [node name="Cloud" type="CSGSphere3D" parent="." unique_id=1160220600]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 radius = 0.1
 material = SubResource("StandardMaterial3D_i3pqv")
+
+[node name="BottleRed_float" parent="." unique_id=1881955261 instance=ExtResource("4_hqtel")]
+transform = Transform3D(1, 0, 0, 0, -1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0)
+
+[node name="BottleYellow_sticky" parent="." unique_id=376626143 instance=ExtResource("5_sweqy")]
+transform = Transform3D(2, 0, 0, 0, 1.6782055, 1.0879459, 0, -1.0879459, 1.6782055, 0, 0.7144101, 0.36534923)
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=547677594]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1149094927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8126221, 0)
+shape = SubResource("CapsuleShape3D_8ao5v")
+
+[node name="HUD" parent="." unique_id=1651718530 instance=ExtResource("6_2hs0m")]
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

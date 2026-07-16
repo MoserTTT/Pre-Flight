@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bsm50x4jr1x3u"]
+
+[ext_resource type="PackedScene" uid="uid://mfhq4jkcns4p" path="res://monster.tscn" id="1_4gyqm"]
+[ext_resource type="Script" uid="uid://j8imt41w3n6a" path="res://enemy.gd" id="1_7k104"]
+
+[sub_resource type="Curve3D" id="Curve3D_4gyqm"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2.4399278, 0, -4, 0, 0, 0, 0, 0, 0, 2.2004495, 0, -4),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ao5v"]
+size = Vector3(1.3231201, 1.7938232, 1.3135986)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m7jft"]
+size = Vector3(1.4912109, 1.8677826, 1.7457275)
+
+[node name="Enemy" type="Node3D" unique_id=1930810099]
+
+[node name="Path3D" type="Path3D" parent="." unique_id=756513545]
+curve = SubResource("Curve3D_4gyqm")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=438187057]
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, -1.0640477, 0, -4)
+progress = 7.9048
+rotation_mode = 0
+
+[node name="RigidBody3D" type="CharacterBody3D" parent="Path3D/PathFollow3D" unique_id=589030874]
+script = ExtResource("1_7k104")
+movement_speed = 2.0
+
+[node name="Monster" parent="Path3D/PathFollow3D/RigidBody3D" unique_id=1757350827 instance=ExtResource("1_4gyqm")]
+transform = Transform3D(-1.0000002, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1.0000002, 0.037155114, -1.6173368, 1.0640479)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/RigidBody3D" unique_id=1097973165]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0.031234717, -0.053973198, 1.0680152)
+shape = SubResource("BoxShape3D_8ao5v")
+
+[node name="Hitbox" type="Area3D" parent="Path3D/PathFollow3D/RigidBody3D" unique_id=227468950]
+transform = Transform3D(-4.37114e-08, 0, -1.0000002, 0, 1, 0, 1.0000002, 0, -4.37114e-08, 0.037155114, -1.6173368, 1.0640479)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/RigidBody3D/Hitbox" unique_id=871603272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029785156, 1.5523148, 0.08087158)
+shape = SubResource("BoxShape3D_m7jft")

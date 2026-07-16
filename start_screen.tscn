@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b1lp100rbb6yv"]
+
+[ext_resource type="Texture2D" uid="uid://de02amfs243y3" path="res://UI/MAIN.svg" id="1_ncxyx"]
+[ext_resource type="Script" uid="uid://b0d3qjfbcmee3" path="res://start_screen.gd" id="1_pevhg"]
+
+[node name="StartScreen" type="Control" unique_id=1523211227]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pevhg")
+
+[node name="Any Button" type="Button" parent="." unique_id=1995899926]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Any Button" unique_id=1305969300]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 646.0
+texture = ExtResource("1_ncxyx")
+expand_mode = 3
+
+[connection signal="pressed" from="Any Button" to="." method="_on_any_button_pressed"]

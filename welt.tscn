@@ -2,9 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://blneyf01pyiw1" path="res://garage.tscn" id="1_2weay"]
 [ext_resource type="PackedScene" uid="uid://dhhr23e1b4ikq" path="res://player.tscn" id="2_n1dji"]
+[ext_resource type="PackedScene" uid="uid://bsm50x4jr1x3u" path="res://enemy.tscn" id="3_3bccv"]
 
 [sub_resource type="Environment" id="Environment_r1115"]
+background_mode = 1
+background_color = Color(0.2051174, 0.20511746, 0.20511737, 1)
 ambient_light_color = Color(1, 1, 1, 1)
+ssr_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.038
+volumetric_fog_ambient_inject = 0.05
+adjustment_enabled = true
+adjustment_contrast = 1.065
+adjustment_saturation = 0.85
 
 [node name="Welt" type="Node3D" unique_id=1081608641]
 
@@ -12,11 +22,6 @@ ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="Player" parent="." unique_id=1016498966 instance=ExtResource("2_n1dji")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.495577, 1.9132862, -9.935269)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1411036464]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5261178, 0)
-use_collision = true
-size = Vector3(100, 1, 100)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=119006555]
 environment = SubResource("Environment_r1115")
@@ -30,16 +35,27 @@ shadow_reverse_cull_face = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1270712839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.149026, -10.485351)
+light_energy = 0.245
+shadow_enabled = true
 omni_range = 20.993458
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1751195457]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.149026, 8.365632)
+light_energy = 2.0
+shadow_enabled = true
 omni_range = 20.993458
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=115476672]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.89913, 2.149026, 7.298341)
+light_energy = 2.0
+shadow_enabled = true
 omni_range = 20.993458
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=180699107]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.10222, 2.149026, 19.99522)
+light_energy = 2.0
+shadow_enabled = true
 omni_range = 20.993458
+
+[node name="Enemy" parent="." unique_id=1930810099 instance=ExtResource("3_3bccv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9118497, 0)
