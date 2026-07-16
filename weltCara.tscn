@@ -10,11 +10,27 @@ ambient_light_color = Color(1, 1, 1, 1)
 [node name="Welt" type="Node3D" unique_id=1081608641]
 
 [node name="Parking" parent="." unique_id=1011660245 instance=ExtResource("1_rikbr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0007801056, 0.009171009, -0.009138107)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Parking" unique_id=183888740]
 transform = Transform3D(0.7750108, 0, -0.63194853, 0, 1, 0, 0.63194853, 0, 0.7750108, -8.862007, 1.4327826, 11.122937)
 use_collision = true
 size = Vector3(4.9224243, 2.2680664, 2.7287598)
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="Parking" unique_id=485812824]
+transform = Transform3D(0.01532352, 0, 0.99988276, 0, 1, 0, -0.99988276, 0, 0.01532352, -2.2087345, 1.4318163, 4.1601133)
+use_collision = true
+size = Vector3(5.3435364, 2.0733643, 2.7287598)
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="Parking" unique_id=1979508751]
+transform = Transform3D(0.38796633, 0, 0.92167395, 0, 1, 0, -0.92167395, 0, 0.38796633, 3.1475186, 1.317208, 12.151728)
+use_collision = true
+size = Vector3(5.3435364, 2.0733643, 2.7287598)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="Parking" unique_id=1483737144]
+transform = Transform3D(-0.0033684075, 0, 0.99999434, 0, 1, 0, -0.99999434, 0, -0.0033684075, 9.30216, 1.5227032, 4.310223)
+use_collision = true
+size = Vector3(5.3435364, 2.0733643, 2.7287598)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Parking" unique_id=1432271905]
 transform = Transform3D(0.9242065, 0, 0.38189316, 0, 1, 0, -0.38189316, 0, 0.9242065, -8.236498, 1.5395353, 1.7204632)
@@ -27,7 +43,7 @@ use_collision = true
 size = Vector3(21.095276, 4.82016, 1)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Parking" unique_id=589572267]
-transform = Transform3D(0.13813597, 0, -0.99041325, 0, 1, 0, 0.99041325, 0, 0.13813597, -4.6783485, 1.7142155, 16.47276)
+transform = Transform3D(0.13813597, 0, -0.99041325, 0, 1, 0, 0.99041325, 0, 0.13813597, -4.6783485, 1.7142155, 15.990988)
 use_collision = true
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Parking" unique_id=1284642650]
@@ -36,7 +52,8 @@ use_collision = true
 size = Vector3(1, 1.3847656, 1)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Parking" unique_id=600427576]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1854286, 0.31764746, 16.386536)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1854286, 0.31764746, 16.084274)
+use_collision = true
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Parking" unique_id=1980132505]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1854286, 0.31764746, 16.386536)
@@ -49,7 +66,7 @@ use_collision = true
 size = Vector3(1, 0.9024048, 2.630371)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Parking" unique_id=697481081]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1949964, 1.3331487, 16.471367)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1949964, 1.3331487, 16.033953)
 use_collision = true
 size = Vector3(1, 2.6879883, 1)
 
@@ -57,6 +74,72 @@ size = Vector3(1, 2.6879883, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1949964, 0.48915458, 15.183762)
 use_collision = true
 size = Vector3(1, 1, 1.4453125)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Parking" unique_id=963969275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.13539, 0.87903786, 0.62856245)
+use_collision = true
+size = Vector3(7.5220947, 1.7578125, 0.296875)
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Parking" unique_id=295588640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19140387, 2.3895273, 1.2571249)
+use_collision = true
+size = Vector3(0.34188843, 4.749878, 0.296875)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Parking" unique_id=1988288784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2484035, 2.3750706, 0.62856245)
+use_collision = true
+size = Vector3(0.34188843, 4.749878, 0.296875)
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="Parking" unique_id=1373653934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08387804, 2.3447309, 5.92244)
+use_collision = true
+size = Vector3(0.34188843, 4.749878, 0.296875)
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="Parking" unique_id=2059899188]
+transform = Transform3D(-0.02422279, 0, 0.99970657, 0, 1, 0, -0.99970657, 0, -0.02422279, 1.4697466, 1.1996481, 1.014452)
+use_collision = true
+size = Vector3(1, 2.4659424, 1.777832)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Parking" unique_id=260995626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.885272, 0.8380778, 1.4630878)
+use_collision = true
+size = Vector3(1, 1.7578125, 1)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Parking" unique_id=440635475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.885272, 1.216984, 3.1917233)
+use_collision = true
+size = Vector3(1, 2.4659424, 1.777832)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Parking" unique_id=109765323]
+use_collision = true
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Parking" unique_id=214395865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.523686, 2.330274, 5.2938776)
+use_collision = true
+size = Vector3(0.34188843, 4.749878, 0.296875)
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="Parking" unique_id=1690167078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2932267, -0.0997262, 1.4465837)
+use_collision = true
+size = Vector3(0.76293945, 1.4565735, 0.4892578)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Parking" unique_id=1132813132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.689033, 1.0536352, 0.7232919)
+use_collision = true
+size = Vector3(0.33544922, 2.1426392, 0.4892578)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Parking" unique_id=137107064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5524592, 0.6567553, 1.7202833)
+use_collision = true
+size = Vector3(1, 1.5252686, 1)
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="Parking" unique_id=218243585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.168813, 2.34409, 11.175511)
+size = Vector3(10.296631, 4.686035, 0.3388672)
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="Parking" unique_id=665994559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1869593, 2.3265908, 14.256885)
+size = Vector3(0.27685547, 4.706299, 5.250183)
 
 [node name="Player" parent="." unique_id=1016498966 instance=ExtResource("2_16obh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.495577, 1.9132862, -9.935269)
@@ -93,7 +176,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.10222, 2.149026, 19.99522)
 omni_range = 20.993458
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1814297097]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7630963, 0.61749506, 16.482613)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7630963, 0.61749506, 15.994841)
 use_collision = true
 size = Vector3(1.6934814, 1.2432861, 1)
 
