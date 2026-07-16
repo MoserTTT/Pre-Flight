@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bkkaptetmya2n"]
+
+[ext_resource type="Texture2D" uid="uid://0s4701cmym72" path="res://UI/MAIN - MENU.svg" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://ds4seg1s8ts1j" path="res://main_menu.gd" id="1_7vrkn"]
+
+[node name="mainMenu" type="Control" unique_id=2053096730]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7vrkn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1095455804]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 2.0
+offset_right = 1083.0576
+offset_bottom = 650.0
+texture = ExtResource("1_06t4h")
+expand_mode = 1
+
+[node name="StartButton" type="Button" parent="TextureRect" unique_id=649728735]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 447.0
+offset_right = 571.0
+offset_bottom = 484.0
+flat = true
+
+[node name="SettingsButton" type="Button" parent="TextureRect" unique_id=979753181]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 486.0
+offset_right = 622.0
+offset_bottom = 523.0
+flat = true
+
+[node name="DoesntDoAnythingButton" type="Button" parent="TextureRect" unique_id=96793482]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 523.0
+offset_right = 623.0
+offset_bottom = 560.0
+flat = true
+
+[node name="QuitButton" type="Button" parent="TextureRect" unique_id=1273092109]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 560.0
+offset_right = 570.0
+offset_bottom = 597.0
+flat = true
+
+[connection signal="pressed" from="TextureRect/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="TextureRect/QuitButton" to="." method="_on_quit_button_pressed"]

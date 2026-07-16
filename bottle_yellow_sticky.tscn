@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bflb0fmshb0f7"]
+
+[ext_resource type="PackedScene" uid="uid://btsk7sx8e6ryx" path="res://BottleYellow_sticky.glb" id="1_gyp2p"]
+
+[node name="BottleYellow_sticky" unique_id=376626143 instance=ExtResource("1_gyp2p")]

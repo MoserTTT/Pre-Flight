@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bn7x8g3blvpmk"]
+
+[ext_resource type="PackedScene" uid="uid://boj1crc0dgavw" path="res://BottleRed_float.glb" id="1_4k7wc"]
+
+[node name="BottleRed_float" unique_id=1881955261 instance=ExtResource("1_4k7wc")]
+
+[node name="Plastic watter bottle" parent="." index="0" unique_id=1097567074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

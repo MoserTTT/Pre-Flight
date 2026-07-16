@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://mfhq4jkcns4p"]
+
+[ext_resource type="PackedScene" uid="uid://dp5651aybxd2c" path="res://Monster.glb" id="1_s3gyj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4agmm"]
+albedo_color = Color(0.019607844, 0.015686275, 0.015686275, 1)
+emission = Color(0.07662936, 0.08527977, 0.10041974, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3bccv"]
+albedo_color = Color(0.5764706, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.4554031, 1.0769255e-06, 2.1658838e-07, 1)
+emission_energy_multiplier = 5.25
+
+[node name="Monster" unique_id=1757350827 instance=ExtResource("1_s3gyj")]
+
+[node name="Torus" parent="." index="0" unique_id=2081828769]
+surface_material_override/0 = SubResource("StandardMaterial3D_4agmm")
+
+[node name="Sphere" parent="Cube" parent_id_path=PackedInt32Array(438072236) index="14" unique_id=52849301]
+surface_material_override/0 = SubResource("StandardMaterial3D_3bccv")
+
+[node name="AnimationPlayer" parent="." index="2" unique_id=1797726528]
+autoplay = &"CubeAction"

@@ -31,6 +31,8 @@ var isShrunk : bool = false
 var hoverTimeRemaining : float = 0.0
 var isSticky = false
 @export var MAX_BOTTLES := 3
+@export var max_health := 3
+var current_health
 
 var bottles: Array[RigidBody3D] = []
 
@@ -63,7 +65,11 @@ func throw_bottle()->void:
 
 
 ## Ability functions
+func on_drink_animation_ended():
+	$BottleYellow_sticky.visible= false
+
 func on_shrink_animation_ended():
+		$Cloud.visible = false
 		if isShrunk:
 			unShrink()
 			isShrunk = false
@@ -82,10 +88,17 @@ func unShrink() -> void:
 	gravity *= 2
 	$CameraPivot/SpringArm3D.spring_length = 3.5
 	$CameraPivot.position.y -= 1.35
+func on_hit_taken():
+	current_health -= 1
+	# play sound effect ouch
 
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	current_health = max_health
+	$BottleRed_float.visible = false
+	$Cloud.visible = false
+	$BottleYellow_sticky.visible = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Mouse look
@@ -115,10 +128,16 @@ func _physics_process(delta: float) -> void:
 		hoverTimeRemaining = hoverTime 
 	
 	#Hover
-	if Input.is_action_pressed("hover"):
+	if Input.is_action_pressed("hover") and not is_on_floor():
 		if hoverTimeRemaining >0:
+			$BottleRed_float.visible=true
+			$AnimationPlayer.play("schweben")
 			velocity.y += gravity * delta 
 			hoverTimeRemaining -= delta
+		else: 
+			$BottleRed_float.visible=false
+	else:
+		$BottleRed_float.visible=false
 	
 	# Jump
 	if Input.is_action_just_pressed("jump"):
@@ -134,11 +153,14 @@ func _physics_process(delta: float) -> void:
 		anim_tree.set("parameters/conditions/jump", true)
 	
 	#Shrink
-	if Input.is_action_just_pressed("shrink"): 
+	if Input.is_action_just_pressed("shrink"):
+		$Cloud.visible=true 
 		$AnimationPlayer.play("CloudExplosion")
 		
 	#Sticky
 	if Input.is_action_just_pressed("toggle_sticky"):
+		$BottleYellow_sticky.visible = true
+		$AnimationPlayer.play("drink_yellow")
 		if isSticky:
 			isSticky = false
 		else:
@@ -177,3 +199,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, speed)
 
 	move_and_slide()
+
+
+func _on_hitbox_area_entered(area: Area3D) -> void:
+	on_hit_taken()

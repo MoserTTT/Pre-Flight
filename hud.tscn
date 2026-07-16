@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dwh4nemb2wyx"]
+
+[ext_resource type="Texture2D" uid="uid://b7h1fw1jl455r" path="res://UI/GAME PLAY.svg" id="1_37p78"]
+[ext_resource type="Script" uid="uid://cos55xwdsijy7" path="res://hud.gd" id="1_64ctp"]
+
+[sub_resource type="SystemFont" id="SystemFont_cfn6v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ao5v"]
+font = SubResource("SystemFont_cfn6v")
+font_size = 51
+
+[node name="HUD" type="Control" unique_id=1651718530]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_64ctp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=390158166]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=714342784]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Bottles" type="TextureRect" parent="CanvasLayer/Control" unique_id=1397579932]
+layout_mode = 0
+offset_left = 979.0
+offset_top = -30.0
+offset_right = 2819.7813
+offset_bottom = 1279.0
+texture = ExtResource("1_37p78")
+stretch_mode = 2
+
+[node name="BottleCounter" type="Label" parent="CanvasLayer/Control" unique_id=1404903347]
+layout_mode = 0
+offset_left = 883.0
+offset_top = 35.0
+offset_right = 1020.0
+offset_bottom = 105.0
+text = "00/40"
+label_settings = SubResource("LabelSettings_8ao5v")
+
+[node name="Healthbar" type="ProgressBar" parent="CanvasLayer/Control" unique_id=1588353376]
+self_modulate = Color(1, 0.011764706, 0, 1)
+layout_mode = 0
+offset_left = 33.0
+offset_top = 42.0
+offset_right = 383.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0.9490196, 1, 0.9490196, 1)
+min_value = 1.0
+max_value = 3.0
+step = 1.0
+value = 1.0
+show_percentage = false
