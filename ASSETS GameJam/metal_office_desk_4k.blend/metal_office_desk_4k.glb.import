@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/metal_office_desk_4k.glb-aaf2493bd97dcadd500b
 nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -37,6 +39,37 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:metal_office_desk": {
+"generate/physics": true
+},
+"PATH:metal_office_desk_drawer_01": {
+"generate/physics": true
+},
+"PATH:metal_office_desk_drawer_02": {
+"generate/physics": true
+},
+"PATH:metal_office_desk_drawer_03": {
+"generate/physics": true
+},
+"PATH:metal_office_desk_drawer_04": {
+"generate/physics": true
+},
+"PATH:metal_office_desk_drawer_05": {
+"generate/physics": true
+},
+"PATH:metal_office_desk_drawer_06": {
+"generate/physics": true
+},
+"PATH:metal_office_desk_tray_01": {
+"generate/physics": true
+},
+"PATH:metal_office_desk_tray_02": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
+gltf/texture_map_mode=0

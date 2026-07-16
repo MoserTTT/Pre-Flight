@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://blneyf01pyiw1" path="res://garage.tscn" id="1_4gxou"]
 [ext_resource type="PackedScene" uid="uid://dhhr23e1b4ikq" path="res://player.tscn" id="2_rpup3"]
+[ext_resource type="PackedScene" uid="uid://dmevjh7g0qu75" path="res://ASSETS GameJam/metal_office_desk_4k.blend/metal_office_desk_4k.glb" id="3_rpup3"]
 
 [sub_resource type="Environment" id="Environment_r1115"]
 ambient_light_color = Color(1, 1, 1, 1)
@@ -48,22 +49,13 @@ omni_range = 20.993458
 transform = Transform3D(0.7983102, 0, 0, 0, 1, 0, 0, 0, 2.177549, 2.2226524, -0.37585163, 230.06073)
 size = Vector3(1, 0.24597168, 1)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=2078076946]
-transform = Transform3D(0.7983102, 0, 0, 0, 0.7836957, 0, 0, 0, 2.1775477, -4.726326, 2.0480156, 15.846571)
-size = Vector3(1.085083, 1, 1)
-
 [node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1491053542]
 transform = Transform3D(0.7983102, 0, 0, 0, 0.78369635, 0, 0, 0, 2.177548, 2.1367164, 2.4556823, -2.1838675)
 size = Vector3(33.124756, 4.63501, 0.3599701)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=1039133521]
-transform = Transform3D(0.7983102, 0, 0, 0, 0.7836957, 0, 0, 0, 2.1775477, -4.1111183, 1.2477779, 15.846571)
-size = Vector3(2.6254883, 1, 1)
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=707877379]
-transform = Transform3D(0.7983102, 0, 0, 0, 0.7836957, 0, 0, 0, 2.1775477, -3.5398548, 0.3849889, 15.846571)
-size = Vector3(4.118164, 1, 1)
-
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=937936819]
 transform = Transform3D(4.0312986, 0, 0, 0, 1, 0, 0, 0, 1, 4.1790915, 2.309279, 5.240286)
 size = Vector3(0.057128906, 4.741028, 4.3588867)
+
+[node name="metal_office_desk_4k" parent="." unique_id=1698380434 instance=ExtResource("3_rpup3")]
+transform = Transform3D(-1.8348236, 0, 0.025463223, 0, 1.835, 0, -0.025463223, 0, -1.8348236, -2.702367, -0.017191648, 15.59737)
