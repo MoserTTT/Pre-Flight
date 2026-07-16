@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csaich2l2swrq"
-path="res://.godot/imported/CoffeeCart_01_4k_CoffeeCart_01_props_diff_4k.png-75389feb77ada6bea3dfe3d346fe1218.ctex"
+path.s3tc="res://.godot/imported/CoffeeCart_01_4k_CoffeeCart_01_props_diff_4k.png-75389feb77ada6bea3dfe3d346fe1218.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "dba15c7d8c9a2bc97e00cd5de8b66659"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://ASSETS GameJam/CoffeeCart_01_4k.blend/CoffeeCart_01_4k_CoffeeCart_01_props_diff_4k.png"
-dest_files=["res://.godot/imported/CoffeeCart_01_4k_CoffeeCart_01_props_diff_4k.png-75389feb77ada6bea3dfe3d346fe1218.ctex"]
+dest_files=["res://.godot/imported/CoffeeCart_01_4k_CoffeeCart_01_props_diff_4k.png-75389feb77ada6bea3dfe3d346fe1218.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

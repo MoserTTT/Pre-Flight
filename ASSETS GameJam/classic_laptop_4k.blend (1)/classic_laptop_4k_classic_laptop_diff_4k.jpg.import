@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bl46pf7ksdsiv"
-path="res://.godot/imported/classic_laptop_4k_classic_laptop_diff_4k.jpg-e51fd4737e9fa975f0d32021e99a2035.ctex"
+path.s3tc="res://.godot/imported/classic_laptop_4k_classic_laptop_diff_4k.jpg-e51fd4737e9fa975f0d32021e99a2035.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "c5f29ad2bbcac669b1d3934f97a338d6"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://ASSETS GameJam/classic_laptop_4k.blend (1)/classic_laptop_4k_classic_laptop_diff_4k.jpg"
-dest_files=["res://.godot/imported/classic_laptop_4k_classic_laptop_diff_4k.jpg-e51fd4737e9fa975f0d32021e99a2035.ctex"]
+dest_files=["res://.godot/imported/classic_laptop_4k_classic_laptop_diff_4k.jpg-e51fd4737e9fa975f0d32021e99a2035.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
