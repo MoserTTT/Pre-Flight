@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://blneyf01pyiw1" path="res://garage.tscn" id="1_4gxou"]
 [ext_resource type="PackedScene" uid="uid://dhhr23e1b4ikq" path="res://player.tscn" id="2_rpup3"]
 [ext_resource type="PackedScene" uid="uid://dmevjh7g0qu75" path="res://ASSETS GameJam/metal_office_desk_4k.blend/metal_office_desk_4k.glb" id="3_rpup3"]
+[ext_resource type="PackedScene" uid="uid://df3gj7b2bjtkf" path="res://ASSETS GameJam/fire_alarm_4k.blend/fire_alarm_4k.glb" id="4_4akue"]
 
 [sub_resource type="Environment" id="Environment_r1115"]
 ambient_light_color = Color(1, 1, 1, 1)
@@ -58,4 +59,7 @@ transform = Transform3D(4.0312986, 0, 0, 0, 1, 0, 0, 0, 1, 4.1790915, 2.309279, 
 size = Vector3(0.057128906, 4.741028, 4.3588867)
 
 [node name="metal_office_desk_4k" parent="." unique_id=1698380434 instance=ExtResource("3_rpup3")]
-transform = Transform3D(-1.8348236, 0, 0.025463223, 0, 1.835, 0, -0.025463223, 0, -1.8348236, -2.702367, -0.017191648, 15.59737)
+transform = Transform3D(-1.8348236, 0, 0.025463223, 0, 1.835, 0, -0.025463223, 0, -1.8348236, -2.5621216, -0.016093612, 16.052275)
+
+[node name="fire_alarm_4k" parent="." unique_id=568073928 instance=ExtResource("4_4akue")]
+transform = Transform3D(-5.8099985, 0, -0.004426934, 0, 5.81, 0, 0.004426934, 0, -5.8099985, -4.6372833, 2.1617188, 16.85848)
