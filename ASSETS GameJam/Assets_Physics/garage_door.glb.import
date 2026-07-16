@@ -1,0 +1,93 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bwjudthjj1rlb"
+path="res://.godot/imported/garage_door.glb-f8e8f5a306a316d30f30ec3a0d81b589.scn"
+
+[deps]
+
+source_file="res://ASSETS GameJam/Assets_Physics/garage_door.glb"
+dest_files=["res://.godot/imported/garage_door.glb-f8e8f5a306a316d30f30ec3a0d81b589.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"nodes": {
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/DoorSection10_10/Object_24": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/DoorSection11_11/Object_26": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/DoorSection12_12/Object_28": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/DoorSection13_13/Object_30": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/DoorSection14_14/Object_32": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/DoorSection1_1/Object_6": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/DoorSection2_2/Object_8": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/DoorSection3_3/Object_10": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/DoorSection4_4/Object_12": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/DoorSection5_5/Object_14": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/DoorSection6_6/Object_16": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/DoorSection7_7/Object_18": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/DoorSection8_8/Object_20": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/DoorSection9_9/Object_22": {
+"generate/physics": true
+},
+"PATH:Sketchfab_model/root/GLTF_SceneRootNode/Frame_0/Object_4": {
+"generate/physics": true
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1
+gltf/texture_map_mode=0
