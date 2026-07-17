@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bsnw1rqtphdg2"]
+
+[ext_resource type="Script" uid="uid://boja7fbwqes8h" path="res://game_over.gd" id="1_yxx3c"]
+[ext_resource type="Texture2D" uid="uid://b1wlamb7xwlh5" path="res://UI/GAME OVER.svg" id="2_ccer4"]
+[ext_resource type="AudioStream" uid="uid://dmgj8mw7r62a5" path="res://Audio/ES_Designed, Misc, Warning Signal - Epidemic Sound.mp3" id="3_ccer4"]
+
+[node name="GameOver" type="Control" unique_id=211956908]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yxx3c")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1759149187]
+layout_mode = 0
+offset_left = 44.0
+offset_top = -84.0
+offset_right = 1118.0
+offset_bottom = 712.0
+texture = ExtResource("2_ccer4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RestartButton" type="Button" parent="TextureRect" unique_id=2101540532]
+layout_mode = 0
+offset_left = -44.0
+offset_top = 84.0
+offset_right = -36.0
+offset_bottom = 92.0
+
+[node name="QuitButton" type="Button" parent="TextureRect" unique_id=1288429183]
+layout_mode = 0
+offset_left = -44.0
+offset_top = 84.0
+offset_right = -36.0
+offset_bottom = 92.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=157664945]
+stream = ExtResource("3_ccer4")
+volume_db = -30.333
+autoplay = true
+
+[connection signal="pressed" from="TextureRect/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="TextureRect/QuitButton" to="." method="_on_quit_button_pressed"]

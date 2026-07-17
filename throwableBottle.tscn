@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://b4worc6yef1fe" path="res://throwable_bottle.gd" id="1_44j0d"]
 [ext_resource type="PackedScene" uid="uid://26rl8ovj7ih3" path="res://bottle_blue_throw.tscn" id="2_5mbq0"]
 [ext_resource type="PackedScene" uid="uid://bflb0fmshb0f7" path="res://bottle_yellow_sticky.tscn" id="3_44j0d"]
+[ext_resource type="AudioStream" uid="uid://dwuhxviqf3pe8" path="res://Audio/ES_Plastic, Movement, Plastic Bottle Throw On Thin Ice Lake - Epidemic Sound.mp3" id="4_7lgjx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_44j0d"]
-size = Vector3(0.347229, 0.8229065, 0.4161377)
+size = Vector3(0.2398758, 0.8229065, 0.2197876)
 
 [sub_resource type="Animation" id="Animation_44j0d"]
 length = 0.001
@@ -61,7 +62,12 @@ _data = {
 &"grow": SubResource("Animation_7lgjx")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ao5v"]
+size = Vector3(0.28878784, 0.8978882, 0.27679443)
+
 [node name="RigidBody3D" type="RigidBody3D" unique_id=794841987]
+collision_layer = 3
+collision_mask = 3
 contact_monitor = true
 max_contacts_reported = 2
 script = ExtResource("1_44j0d")
@@ -75,8 +81,20 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=253392373]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014984131, 0.44416028, 0.006164551)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0032157898, 0.43925256, -0.003882885)
 shape = SubResource("BoxShape3D_44j0d")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1765025593]
 libraries/ = SubResource("AnimationLibrary_kr7hi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1585841415]
+stream = ExtResource("4_7lgjx")
+volume_db = -30.0
+
+[node name="BottleBox" type="Area3D" parent="." unique_id=1140137656]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BottleBox" unique_id=1899323600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01020813, 0.43388423, -0.010142326)
+shape = SubResource("BoxShape3D_8ao5v")

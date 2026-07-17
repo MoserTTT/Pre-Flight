@@ -4,10 +4,14 @@
 [ext_resource type="Script" uid="uid://cos55xwdsijy7" path="res://hud.gd" id="1_64ctp"]
 
 [sub_resource type="SystemFont" id="SystemFont_cfn6v"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_8ao5v"]
 font = SubResource("SystemFont_cfn6v")
 font_size = 51
+
+[sub_resource type="LabelSettings" id="LabelSettings_m7jft"]
+font_size = 48
 
 [node name="HUD" type="Control" unique_id=1651718530]
 layout_mode = 3
@@ -45,7 +49,7 @@ offset_left = 883.0
 offset_top = 35.0
 offset_right = 1020.0
 offset_bottom = 105.0
-text = "00/40"
+text = "0/15"
 label_settings = SubResource("LabelSettings_8ao5v")
 
 [node name="Healthbar" type="ProgressBar" parent="CanvasLayer/Control" unique_id=1588353376]
@@ -57,7 +61,39 @@ offset_right = 383.0
 offset_bottom = 92.0
 theme_override_colors/font_color = Color(0.9490196, 1, 0.9490196, 1)
 min_value = 1.0
-max_value = 3.0
+max_value = 4.0
 step = 1.0
 value = 1.0
 show_percentage = false
+
+[node name="Tutorial1" type="Label" parent="CanvasLayer" unique_id=405758374]
+offset_left = 275.0
+offset_top = 461.0
+offset_right = 878.0
+offset_bottom = 534.0
+text = "Press M1 to shoot Bottles!"
+label_settings = SubResource("LabelSettings_m7jft")
+
+[node name="Tutorial2" type="Label" parent="CanvasLayer" unique_id=1173783769]
+offset_left = 378.0
+offset_top = 464.0
+offset_right = 786.0
+offset_bottom = 537.0
+text = "Press Q to shrink!"
+label_settings = SubResource("LabelSettings_m7jft")
+
+[node name="Tutorial3" type="Label" parent="CanvasLayer" unique_id=145508466]
+offset_left = 225.0
+offset_top = 461.0
+offset_right = 984.0
+offset_bottom = 534.0
+text = "Press E to activate Sticky Bottles!"
+label_settings = SubResource("LabelSettings_m7jft")
+
+[node name="Tutorial4" type="Label" parent="CanvasLayer" unique_id=1642911433]
+offset_left = 367.0
+offset_top = 461.0
+offset_right = 832.0
+offset_bottom = 534.0
+text = "Press Shift to hover!"
+label_settings = SubResource("LabelSettings_m7jft")

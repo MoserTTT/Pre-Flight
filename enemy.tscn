@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://mfhq4jkcns4p" path="res://monster.tscn" id="1_4gyqm"]
 [ext_resource type="Script" uid="uid://j8imt41w3n6a" path="res://enemy.gd" id="1_7k104"]
+[ext_resource type="AudioStream" uid="uid://wcl0gnav44mb" path="res://Audio/ES_Robots, Movement, Body Movement, Small Robot 01 - Epidemic Sound.mp3" id="3_qi2p4"]
 
 [sub_resource type="Curve3D" id="Curve3D_4gyqm"]
 closed = true
@@ -15,7 +16,76 @@ point_count = 2
 size = Vector3(1.3231201, 1.7938232, 1.3135986)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m7jft"]
-size = Vector3(1.4912109, 1.8677826, 1.7457275)
+size = Vector3(1.4912109, 2.6930199, 2.250885)
+
+[sub_resource type="Animation" id="Animation_iifgy"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/PathFollow3D/CharacterBody3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_4gyqm"]
+resource_name = "die"
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_qi2p4")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path3D/PathFollow3D/CharacterBody3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.23333333, 1, 0, -0.29, 0, 0.36666667, 1, 0, -0.505, 0)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Path3D/PathFollow3D/CharacterBody3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.23333333, 1, 0.23344538, 0, 0, 0.9723699, 0.36666667, 1, 0.5842497, 0, 0, 0.811574)
+tracks/3/type = "scale_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Path3D/PathFollow3D/CharacterBody3D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0.36666667, 1, 1, 1, 1, 0.96666664, 1, 0.1, 0.1, 0.1)
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.96666664),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qi2p4"]
+_data = {
+&"RESET": SubResource("Animation_iifgy"),
+&"die": SubResource("Animation_4gyqm")
+}
 
 [node name="Enemy" type="Node3D" unique_id=1930810099]
 
@@ -27,22 +97,31 @@ transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, -1.0640477,
 progress = 7.9048
 rotation_mode = 0
 
-[node name="RigidBody3D" type="CharacterBody3D" parent="Path3D/PathFollow3D" unique_id=589030874]
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Path3D/PathFollow3D" unique_id=589030874]
 script = ExtResource("1_7k104")
 movement_speed = 2.0
 
-[node name="Monster" parent="Path3D/PathFollow3D/RigidBody3D" unique_id=1757350827 instance=ExtResource("1_4gyqm")]
+[node name="Monster" parent="Path3D/PathFollow3D/CharacterBody3D" unique_id=1757350827 instance=ExtResource("1_4gyqm")]
 transform = Transform3D(-1.0000002, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1.0000002, 0.037155114, -1.6173368, 1.0640479)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/RigidBody3D" unique_id=1097973165]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/CharacterBody3D" unique_id=1097973165]
 transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, 0.031234717, -0.053973198, 1.0680152)
 shape = SubResource("BoxShape3D_8ao5v")
 
-[node name="Hitbox" type="Area3D" parent="Path3D/PathFollow3D/RigidBody3D" unique_id=227468950]
+[node name="Hitbox" type="Area3D" parent="Path3D/PathFollow3D/CharacterBody3D" unique_id=227468950]
 transform = Transform3D(-4.37114e-08, 0, -1.0000002, 0, 1, 0, 1.0000002, 0, -4.37114e-08, 0.037155114, -1.6173368, 1.0640479)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/RigidBody3D/Hitbox" unique_id=871603272]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029785156, 1.5523148, 0.08087158)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/CharacterBody3D/Hitbox" unique_id=871603272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029785156, 1.7917423, 0.055923462)
 shape = SubResource("BoxShape3D_m7jft")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path3D/PathFollow3D/CharacterBody3D" unique_id=150269028]
+root_node = NodePath("../../../..")
+libraries/ = SubResource("AnimationLibrary_qi2p4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1983098488]
+volume_db = -25.0
+
+[connection signal="area_entered" from="Path3D/PathFollow3D/CharacterBody3D/Hitbox" to="Path3D/PathFollow3D/CharacterBody3D" method="_on_hitbox_area_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wcl0gnav44mb"
+path="res://.godot/imported/ES_Robots, Movement, Body Movement, Small Robot 01 - Epidemic Sound.mp3-3da5f2d649a68a5c1d0132d50dff0171.mp3str"
+
+[deps]
+
+source_file="res://Audio/ES_Robots, Movement, Body Movement, Small Robot 01 - Epidemic Sound.mp3"
+dest_files=["res://.godot/imported/ES_Robots, Movement, Body Movement, Small Robot 01 - Epidemic Sound.mp3-3da5f2d649a68a5c1d0132d50dff0171.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

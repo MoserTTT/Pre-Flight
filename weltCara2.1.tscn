@@ -16,11 +16,6 @@ albedo_color = Color(1, 0.003921569, 0, 1)
 [node name="Player" parent="." unique_id=1016498966 instance=ExtResource("2_ol8q5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.495577, 1.9132862, -9.935269)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1411036464]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5261178, 0)
-use_collision = true
-size = Vector3(100, 1, 100)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=119006555]
 environment = SubResource("Environment_r1115")
 
@@ -47,29 +42,31 @@ omni_range = 20.993458
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.10222, 2.149026, 19.99522)
 omni_range = 20.993458
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=281463012]
+[node name="Cara2" type="Node3D" parent="." unique_id=2107349228]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Cara2" unique_id=281463012]
 transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, 33.27987, -0.092197806, 28.92387)
 size = Vector3(0.20605469, 9.879301, 4.1631956)
 material = SubResource("StandardMaterial3D_qk2o7")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1295733873]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Cara2" unique_id=1295733873]
 transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, 50.68636, -0.08878339, 23.748283)
 size = Vector3(0.20605469, 5.365328, 5.797757)
 material = SubResource("StandardMaterial3D_qk2o7")
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=1449863548]
+[node name="CSGBox3D7" type="CSGBox3D" parent="Cara2" unique_id=1449863548]
 transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, 38.395958, 0.4711921, 19.59964)
 size = Vector3(0.20605469, 8.605108, 6.74784)
 material = SubResource("StandardMaterial3D_qk2o7")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1939847862]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Cara2" unique_id=1939847862]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.000114, 2.441521, 23.78208)
 size = Vector3(21.60128, 5.6049805, 0.21044922)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=515401109]
+[node name="CSGBox3D6" type="CSGBox3D" parent="Cara2" unique_id=515401109]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.26563, 2.441521, 15.222219)
 size = Vector3(28.132315, 5.6049805, 0.21044922)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1470943274]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Cara2" unique_id=1470943274]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 26.279148, 2.441521, 20.416803)
 size = Vector3(7.027672, 5.6049805, 0.21044922)

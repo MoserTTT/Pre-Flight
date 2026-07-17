@@ -4155,9 +4155,9 @@ _subresources={
 },
 "Crack Walking Foward_002_real": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "",
+"save_to_file/fallback_path": "res://running_added_tracks.anim",
 "save_to_file/keep_custom_tracks": true,
-"save_to_file/path": "",
+"save_to_file/path": "uid://b4nmrccniyl0s",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,

@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://c2x3v5kay3d6"]
+
+[ext_resource type="PackedScene" uid="uid://ctrwavggiuomj" path="res://BottleBlue_throw.glb" id="1_qugpe"]
+[ext_resource type="Script" uid="uid://bre6sfqlxij0j" path="res://bottle_blue_pickup.gd" id="2_udm80"]
+[ext_resource type="AudioStream" uid="uid://b074lk7fxts2e" path="res://Audio/ES_Games, Video, Collect Item 01 - Epidemic Sound.mp3" id="3_estp3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqgnt"]
+albedo_color = Color(0.22745098, 1, 1, 1)
+emission_enabled = true
+emission = Color(0.21176471, 0.7490196, 0.5372549, 1)
+emission_energy_multiplier = 10.0
+
+[sub_resource type="Animation" id="Animation_qugpe"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_estp3"]
+resource_name = "pickup"
+length = 0.6
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.033333335, 1, 1, 1, 1, 0.5, 1, 0.1, 0.1, 0.1)
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.6,
+"start_offset": 0.05,
+"stream": ExtResource("3_estp3")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_udm80"]
+resource_name = "rotate"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 1, 0, 0.70710677, 0, 0.70710677, 2, 1, 0, 1, 0, -4.371139e-08, 3, 1, 0, -0.70710677, 0, 0.70710677, 8, 1, 0, 8.742278e-08, 0, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_estp3"]
+_data = {
+&"RESET": SubResource("Animation_qugpe"),
+&"pickup": SubResource("Animation_estp3"),
+&"rotate": SubResource("Animation_udm80")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8ao5v"]
+radius = 0.29638672
+height = 0.85621643
+
+[node name="BottleBlue_Pickup" unique_id=527791830 instance=ExtResource("1_qugpe")]
+transform = Transform3D(0.100000024, 0, 0, 0, 0.100000024, 0, 0, 0, 0.100000024, 0, 0, 0)
+script = ExtResource("2_udm80")
+
+[node name="Plastic watter bottle" parent="." index="0" unique_id=2059197778]
+transform = Transform3D(-2.1213202, -2.1213202, -4.5298742e-07, -2.1213202, 2.1213202, 0, 3.2031045e-07, 3.2031045e-07, -3, 0.19369745, 0.45, 0)
+
+[node name="bottle" parent="Plastic watter bottle" index="0" unique_id=761787985]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -0.00410478, 0.0008874444, 0)
+
+[node name="label" parent="Plastic watter bottle" index="3" unique_id=1627199137]
+surface_material_override/0 = SubResource("StandardMaterial3D_rqgnt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=174976540]
+libraries/ = SubResource("AnimationLibrary_estp3")
+autoplay = &"rotate"
+
+[node name="Area3D" type="Area3D" parent="." index="2" unique_id=1870105724]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=110878611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004236251, 0.66017914, 0)
+shape = SubResource("CapsuleShape3D_8ao5v")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3" unique_id=1529323683]
+volume_db = -23.0
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qbi5ul3hcc31"
+path="res://.godot/imported/ES_Ambience, Underground, Tunnel, Train Pass By Overhead, Water Dripping 01 - Epidemic Sound.mp3-13d8af77c5a6e078579f93502a7c8a23.mp3str"
+
+[deps]
+
+source_file="res://Audio/ES_Ambience, Underground, Tunnel, Train Pass By Overhead, Water Dripping 01 - Epidemic Sound.mp3"
+dest_files=["res://.godot/imported/ES_Ambience, Underground, Tunnel, Train Pass By Overhead, Water Dripping 01 - Epidemic Sound.mp3-13d8af77c5a6e078579f93502a7c8a23.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

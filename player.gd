@@ -31,14 +31,22 @@ var isShrunk : bool = false
 var hoverTimeRemaining : float = 0.0
 var isSticky = false
 @export var MAX_BOTTLES := 3
-@export var max_health := 3
+@export var max_health := 4
 var current_health
+var current_bottles = 0
 
 var bottles: Array[RigidBody3D] = []
 
 ## --- Other ---
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var anim_tree: AnimationTree =$Model/AnimationTree
+# i know the following is plain awful but its 5am
+var has_shown_tutorial1 = false
+var has_shown_tutorial2 = false
+var has_shown_tutorial3 = false
+var has_shown_tutorial4 = false
+var tutorial_cooldown = 2.0
+var tutorial_cooldown_remaining = 2.0
 
 
 # recipients of calls sent from the animation track to sync physics and animation
@@ -90,6 +98,9 @@ func unShrink() -> void:
 	$CameraPivot.position.y -= 1.35
 func on_hit_taken():
 	current_health -= 1
+	$HUD.set_healthbar(current_health)
+	if current_health <= 0:
+		get_tree().change_scene_to_file("res://game_over.tscn")
 	# play sound effect ouch
 
 
@@ -119,6 +130,27 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	# this is an abomonation and i apologize, theres jsut no time left
+	if current_bottles == 0 and not has_shown_tutorial1:
+		$HUD/CanvasLayer/Tutorial1.visible = true
+		tutorial_cooldown_remaining = tutorial_cooldown
+		has_shown_tutorial1 = true
+	if current_bottles == 5 and not has_shown_tutorial2:
+		$HUD/CanvasLayer/Tutorial2.visible = true
+		tutorial_cooldown_remaining = tutorial_cooldown
+		has_shown_tutorial2 = true
+	if current_bottles == 10 and not has_shown_tutorial3:
+		$HUD/CanvasLayer/Tutorial3.visible = true
+		tutorial_cooldown_remaining = tutorial_cooldown
+		has_shown_tutorial3 = true
+	if current_bottles == 15 and not has_shown_tutorial4:
+		$HUD/CanvasLayer/Tutorial4.visible = true
+		tutorial_cooldown_remaining = tutorial_cooldown
+		has_shown_tutorial4 = true
+	tutorial_cooldown_remaining -= delta
+	if tutorial_cooldown_remaining <=0:
+		set_tutorials_false()
+	
 	# Gravity
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -202,4 +234,19 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_hitbox_area_entered(area: Area3D) -> void:
-	on_hit_taken()
+	# extremly dirty fix for a gamebreaking bug i hope no one sees this
+	if area.name =="BottleBox":
+		pass
+	else:
+		on_hit_taken()
+
+
+func _on_pickup_box_area_entered(area: Area3D) -> void:
+	current_bottles += 1
+	$HUD.set_bottle_counter(current_bottles)
+	
+func set_tutorials_false():
+	$HUD/CanvasLayer/Tutorial1.visible = false
+	$HUD/CanvasLayer/Tutorial2.visible = false
+	$HUD/CanvasLayer/Tutorial3.visible = false
+	$HUD/CanvasLayer/Tutorial4.visible = false

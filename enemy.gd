@@ -21,3 +21,8 @@ func _physics_process(delta: float) -> void:
 	elif parent.progress_ratio <= 0.0:
 		parent.progress_ratio = 0.0
 		direction = 1.0
+
+
+func _on_hitbox_area_entered(area: Area3D) -> void:
+	$AnimationPlayer.play("die")
+	pass

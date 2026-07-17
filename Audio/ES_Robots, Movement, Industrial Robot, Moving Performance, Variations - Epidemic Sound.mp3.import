@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cbxt4lu7pgw5l"
+path="res://.godot/imported/ES_Robots, Movement, Industrial Robot, Moving Performance, Variations - Epidemic Sound.mp3-ca393d2fc38d5b72c88abd3370957a38.mp3str"
+
+[deps]
+
+source_file="res://Audio/ES_Robots, Movement, Industrial Robot, Moving Performance, Variations - Epidemic Sound.mp3"
+dest_files=["res://.godot/imported/ES_Robots, Movement, Industrial Robot, Moving Performance, Variations - Epidemic Sound.mp3-ca393d2fc38d5b72c88abd3370957a38.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://6otjgb3haspm" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://dky57op7rrd5o" path="res://throwableBottle.tscn" id="2_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://d1tflo2xryi3q" path="res://cracky.tscn" id="3_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://depcn2fkwunyl" path="res://Audio/ES_Games, Video, Holograms 02 - Epidemic Sound.mp3" id="4_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://bn7x8g3blvpmk" path="res://bottle_red_float.tscn" id="4_hqtel"]
+[ext_resource type="AudioStream" uid="uid://nk6olsxeukn7" path="res://Audio/ES_Scifi, Computer, Futuristic UI, Robotic, Movement 02 - Epidemic Sound.mp3" id="5_b26j0"]
+[ext_resource type="AudioStream" uid="uid://bpi1v0i3krihd" path="res://Audio/ES_Magic, Shimmer, Spell, Pad, Ethereal, Idle, Complex 01 - Epidemic Sound.mp3" id="5_dw050"]
 [ext_resource type="PackedScene" uid="uid://bflb0fmshb0f7" path="res://bottle_yellow_sticky.tscn" id="5_sweqy"]
 [ext_resource type="PackedScene" uid="uid://dwh4nemb2wyx" path="res://hud.tscn" id="6_2hs0m"]
 
@@ -42,6 +45,21 @@ tracks/2/path = NodePath("Cloud")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = PackedFloat32Array(0.033333335, 1, 0, 0.5, 0)
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AbilityPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.53333336,
+"stream": ExtResource("4_1jxqw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_hqtel"]
 length = 0.001
@@ -101,6 +119,21 @@ tracks/2/keys = {
 "method": &"on_drink_animation_ended"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AbilityPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_b26j0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_2hs0m"]
 resource_name = "schweben"
@@ -119,6 +152,21 @@ tracks/1/path = NodePath("BottleRed_float")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0.033333335, 1, -0.7, 0.257, 0, 0.11033334, 1, -0.059642076, 1.5591478, 0, 0.19833334, 1, -0.059642076, 3.2072148, 0, 0.27533334, 1, -0.06, 3.5, 0, 0.6, 1, -0.7, 0.257, 0)
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AbilityPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 1.0833333,
+"stream": ExtResource("5_dw050")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hqtel"]
 _data = {
@@ -137,6 +185,9 @@ emission_enabled = true
 radius = 0.44506836
 height = 1.4055176
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ao5v"]
+size = Vector3(1, 1.9570313, 1)
+
 [node name="Player" type="CharacterBody3D" unique_id=1016498966]
 script = ExtResource("1_4flbx")
 bottle_scene = ExtResource("2_i3pqv")
@@ -154,7 +205,7 @@ spring_length = 3.5
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1952972820]
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=76265513]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3626368, 0.7477357, 0.70750636)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3626368, 0.7477357, 1.398145)
 
 [node name="Model" parent="." unique_id=701297248 instance=ExtResource("3_i3pqv")]
 
@@ -181,4 +232,16 @@ shape = SubResource("CapsuleShape3D_8ao5v")
 
 [node name="HUD" parent="." unique_id=1651718530 instance=ExtResource("6_2hs0m")]
 
+[node name="AbilityPlayer" type="AudioStreamPlayer" parent="." unique_id=313635517]
+volume_db = -32.883
+
+[node name="PickupBox" type="Area3D" parent="." unique_id=1484354809]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupBox" unique_id=1173939118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47851563, 0)
+shape = SubResource("BoxShape3D_8ao5v")
+
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="PickupBox" to="." method="_on_pickup_box_area_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dregldwt88j88"
+path="res://.godot/imported/ES_Movement, Crowd, Group Running Gravel POV - Epidemic Sound.mp3-9b62b830b26d55c6f1f67545b62c0427.mp3str"
+
+[deps]
+
+source_file="res://Audio/ES_Movement, Crowd, Group Running Gravel POV - Epidemic Sound.mp3"
+dest_files=["res://.godot/imported/ES_Movement, Crowd, Group Running Gravel POV - Epidemic Sound.mp3-9b62b830b26d55c6f1f67545b62c0427.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmgj8mw7r62a5"
+path="res://.godot/imported/ES_Designed, Misc, Warning Signal - Epidemic Sound.mp3-146c40d4cebb4c8b547a3ff52d0a2815.mp3str"
+
+[deps]
+
+source_file="res://Audio/ES_Designed, Misc, Warning Signal - Epidemic Sound.mp3"
+dest_files=["res://.godot/imported/ES_Designed, Misc, Warning Signal - Epidemic Sound.mp3-146c40d4cebb4c8b547a3ff52d0a2815.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

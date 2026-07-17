@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b074lk7fxts2e"
+path="res://.godot/imported/ES_Games, Video, Collect Item 01 - Epidemic Sound.mp3-3da0ef12fee0400bf8a0fc62db007812.mp3str"
+
+[deps]
+
+source_file="res://Audio/ES_Games, Video, Collect Item 01 - Epidemic Sound.mp3"
+dest_files=["res://.godot/imported/ES_Games, Video, Collect Item 01 - Epidemic Sound.mp3-3da0ef12fee0400bf8a0fc62db007812.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -77,33 +77,33 @@ graph_offset = Vector2(87, -127)
 [node name="Char2AnimationsEdited" unique_id=1803385866 instance=ExtResource("1_18k11")]
 script = ExtResource("2_rcow5")
 
-[node name="metarig" parent="." index="0" unique_id=2009107062]
+[node name="metarig" parent="." index="0" unique_id=1643675016]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036331654, 0, 0)
 
-[node name="Skeleton3D" parent="metarig" index="0" unique_id=1625196735]
-bones/0/position = Vector3(-0.047948636, 0.39859465, -0.0033550058)
-bones/0/rotation = Quaternion(0.08639042, 0.0452146, 0.01934918, 0.9950468)
-bones/3/rotation = Quaternion(0.0034470134, 3.509631e-15, -3.744563e-15, 0.99999404)
-bones/6/rotation = Quaternion(-0.18926291, 0.03199982, -0.04183452, 0.98051286)
-bones/7/rotation = Quaternion(-0.58499163, -0.37847307, -0.41103977, 0.58786845)
-bones/8/rotation = Quaternion(-0.23177707, 0.58353263, -0.47165263, 0.61912274)
-bones/9/rotation = Quaternion(-0.00017307431, 0.18263963, -0.2187954, 0.95852566)
-bones/10/rotation = Quaternion(-0.08829007, -0.8058746, -0.054972988, 0.58287996)
-bones/11/rotation = Quaternion(-0.5793992, 0.3875779, 0.37828004, 0.6090848)
-bones/12/rotation = Quaternion(-0.2647066, -0.48792633, 0.42373982, 0.71575344)
-bones/13/rotation = Quaternion(0.008432669, -0.19445816, 0.21085972, 0.9579421)
-bones/14/rotation = Quaternion(-0.03799189, 0.8075833, 0.064177655, 0.5850188)
-bones/15/rotation = Quaternion(-5.49791e-08, 0.68534327, 0.72822016, -5.1741964e-08)
-bones/16/rotation = Quaternion(-5.49791e-08, 0.68534327, 0.72822016, -5.1741964e-08)
-bones/19/rotation = Quaternion(0.9778935, -0.0109256115, -0.026367828, 0.20714685)
-bones/20/rotation = Quaternion(0.13273393, -0.0043748, -0.012999663, 0.9910568)
-bones/21/rotation = Quaternion(-0.64847887, 0.028438808, 0.08195581, 0.7562736)
-bones/24/rotation = Quaternion(0.95221055, 0.003855905, -0.01949078, 0.30479568)
-bones/25/rotation = Quaternion(0.34117725, 6.0551327e-05, 0.01440841, 0.93988854)
-bones/26/rotation = Quaternion(-0.6935467, 0.046306778, 0.045484345, 0.7174817)
+[node name="Skeleton3D" parent="metarig" index="0" unique_id=1295333903]
+bones/0/position = Vector3(0.0074689295, 0.43367097, -0.11950983)
+bones/0/rotation = Quaternion(0.07527837, 2.381578e-07, 1.9088231e-08, 0.99716264)
+bones/3/rotation = Quaternion(0.0034470153, 3.894376e-15, -3.6382856e-15, 0.99999404)
+bones/6/rotation = Quaternion(-0.19065225, 1.1931628e-07, -9.183969e-09, 0.98165774)
+bones/7/rotation = Quaternion(-0.5794112, -0.38297522, -0.39019707, 0.6044493)
+bones/8/rotation = Quaternion(-0.25048938, 0.5651061, -0.45302105, 0.64240336)
+bones/9/rotation = Quaternion(0.009585927, 0.18475348, -0.22049221, 0.95768344)
+bones/10/rotation = Quaternion(-0.068202265, -0.8079775, -0.040264763, 0.58386624)
+bones/11/rotation = Quaternion(-0.57941127, 0.3829752, 0.390197, 0.60444933)
+bones/12/rotation = Quaternion(-0.2504894, -0.56510615, 0.45302084, 0.6424035)
+bones/13/rotation = Quaternion(0.0095860725, -0.18475403, 0.2204923, 0.95768327)
+bones/14/rotation = Quaternion(-0.06820267, 0.80797726, 0.0402644, 0.5838665)
+bones/15/rotation = Quaternion(-5.4979104e-08, 0.68534327, 0.72822016, -5.1741974e-08)
+bones/16/rotation = Quaternion(-5.4979104e-08, 0.68534327, 0.72822016, -5.1741974e-08)
+bones/19/rotation = Quaternion(0.97125405, 1.2657637e-07, 9.850369e-07, 0.2380453)
+bones/20/rotation = Quaternion(0.23380485, -7.975258e-07, 1.564124e-07, 0.9722836)
+bones/21/rotation = Quaternion(-0.6737007, 6.122124e-07, -5.218356e-07, 0.7390044)
+bones/24/rotation = Quaternion(0.97125405, -3.2417788e-07, -8.2903176e-07, 0.23804533)
+bones/25/rotation = Quaternion(0.23380491, -7.355019e-07, -7.2065734e-07, 0.97228354)
+bones/26/rotation = Quaternion(-0.6737005, 7.1504866e-07, 1.7890488e-06, 0.7390045)
 bones/27/rotation = Quaternion(-2.041238e-07, 0.9885871, -0.1506507, -3.1033377e-07)
 
-[node name="Character" parent="metarig/Skeleton3D" index="0" unique_id=1025542450]
+[node name="Character" parent="metarig/Skeleton3D" index="0" unique_id=1569380911]
 surface_material_override/0 = SubResource("StandardMaterial3D_3bccv")
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=432959840]
@@ -113,3 +113,6 @@ parameters/conditions/idle = false
 parameters/conditions/jump = false
 parameters/conditions/throw = false
 parameters/conditions/walk = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3" unique_id=738347211]
+volume_db = -40.0

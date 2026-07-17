@@ -7,6 +7,7 @@ func on_grow_anim_finished():
 	$CollisionShape3D.position.y += 0.5
 
 func _ready():
+	$AudioStreamPlayer.play()
 	$Bottle/BottleYellow_sticky.visible=false
 	if isSticky:
 		$Bottle/BottleYellow_sticky.visible=true
