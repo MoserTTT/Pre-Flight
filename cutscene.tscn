@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c73yyhrnxrhex"]
+
+[ext_resource type="Script" uid="uid://c6whtnq5w2vdk" path="res://cutscene.gd" id="1_8vcau"]
+[ext_resource type="AudioStream" uid="uid://ccdai1f838cnh" path="res://Audio/ES_Ambience, Designed, Eerie, Knocking - Epidemic Sound.mp3" id="1_ye7fo"]
+[ext_resource type="VideoStream" uid="uid://dou7lbel6ui6s" path="res://Audio/Start animation.ogv" id="2_ix241"]
+
+[node name="Cutscene" type="Control" unique_id=953909493]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8vcau")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=171076516]
+stream = ExtResource("1_ye7fo")
+volume_db = -10.523
+autoplay = true
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=983370105]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 2.0
+offset_right = 1161.0
+offset_bottom = 649.0
+stream = ExtResource("2_ix241")
+autoplay = true
+expand = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

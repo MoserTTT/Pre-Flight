@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c4pdt1vu3r764"
+path="res://.godot/imported/ES_Designed, Drone, Dark Atmosphere, Loop, Mystic, Tones, Rumble, Game 08 - Epidemic Sound.mp3-0602da097c4533d1b98555c09a03e85f.mp3str"
+
+[deps]
+
+source_file="res://Audio/ES_Designed, Drone, Dark Atmosphere, Loop, Mystic, Tones, Rumble, Game 08 - Epidemic Sound.mp3"
+dest_files=["res://.godot/imported/ES_Designed, Drone, Dark Atmosphere, Loop, Mystic, Tones, Rumble, Game 08 - Epidemic Sound.mp3-0602da097c4533d1b98555c09a03e85f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
