@@ -100,6 +100,7 @@ func on_hit_taken():
 	current_health -= 1
 	$HUD.set_healthbar(current_health)
 	if current_health <= 0:
+		queue_free()
 		get_tree().change_scene_to_file("res://game_over.tscn")
 	# play sound effect ouch
 
